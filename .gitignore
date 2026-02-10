@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Next.js build
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Image generation (source prompts tracked, generated images not)
+image-generated/
+
+# Debug
+*.log
+npm-debug.log*
+
+# Source asset working folders (not part of website build)
+bg/
+bod/
+timeline/
+copywriting/

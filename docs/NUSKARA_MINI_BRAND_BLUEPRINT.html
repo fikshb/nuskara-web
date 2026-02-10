@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuskara - Mini Brand Blueprint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       RESET & BASE
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Brand Colors */
+      --red-900: #7F1D1D;
+      --red-800: #991B1B;
+      --red-700: #B91C1C;
+      --red-600: #DC2626;
+      --red-500: #EF4444;
+      --red-400: #F87171;
+      --red-100: #FEE2E2;
+      --red-50: #FEF2F2;
+
+      --neutral-950: #0A0A0A;
+      --neutral-900: #171717;
+      --neutral-800: #262626;
+      --neutral-700: #404040;
+      --neutral-600: #525252;
+      --neutral-500: #737373;
+      --neutral-400: #A3A3A3;
+      --neutral-300: #D4D4D4;
+      --neutral-200: #E5E5E5;
+      --neutral-100: #F5F5F5;
+      --neutral-50: #FAFAFA;
+      --white: #FFFFFF;
+
+      --glow-red: rgba(239, 68, 68, 0.6);
+      --glow-orange: rgba(251, 146, 60, 0.4);
+
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--neutral-800);
+      background: var(--neutral-100);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    /* ============================================
+       PRINT / PDF STYLES
+    ============================================ */
+    @media print {
+      body { background: white; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+      .page { box-shadow: none !important; margin: 0 !important; page-break-after: always; }
+      .page:last-child { page-break-after: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    /* ============================================
+       PAGE LAYOUT
+    ============================================ */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      background: var(--white);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-inner {
+      padding: 48px 56px;
+      min-height: 297mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ============================================
+       COVER PAGE
+    ============================================ */
+    .cover {
+      background: var(--neutral-950);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .cover-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .cover-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+      filter: brightness(1.3) saturate(0.8);
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 300px;
+      background: var(--red-900);
+      opacity: 0.2;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, var(--red-700) 0%, transparent 70%);
+      opacity: 0.15;
+    }
+
+    .cover .page-inner {
+      padding: 56px 64px;
+      justify-content: space-between;
+      position: relative;
+      z-index: 5;
+    }
+
+    .cover-logo {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .cover-title {
+      margin-top: auto;
+    }
+
+    .cover-title h1 {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .cover-title h1 span {
+      color: var(--red-500);
+    }
+
+    .cover-subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+
+    .cover-meta {
+      display: flex;
+      gap: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--neutral-800);
+    }
+
+    .cover-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cover-meta-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--neutral-200);
+    }
+
+    .cover-meta-value {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    /* ============================================
+       ANGULAR DECORATIVE LINES
+    ============================================ */
+    .angular-line {
+      position: absolute;
+      background: var(--red-600);
+      opacity: 0.12;
+      transform-origin: center;
+    }
+
+    .cover .angular-line-1 {
+      width: 600px; height: 1px;
+      top: 200px; right: -100px;
+      transform: rotate(-35deg);
+    }
+
+    .cover .angular-line-2 {
+      width: 400px; height: 1px;
+      top: 280px; right: -50px;
+      transform: rotate(-35deg);
+    }
+
+    .cover .angular-line-3 {
+      width: 500px; height: 1px;
+      bottom: 300px; left: -100px;
+      transform: rotate(-35deg);
+    }
+
+    /* ============================================
+       SECTION HEADERS
+    ============================================ */
+    .section-number {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--red-600);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--neutral-900);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .section-desc {
+      font-size: 13px;
+      color: var(--neutral-500);
+      line-height: 1.6;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+
+    /* Page header bar */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--neutral-200);
+    }
+
+    .page-header-brand {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--neutral-400);
+    }
+
+    .page-header-section {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red-600);
+    }
+
+    /* ============================================
+       TABLE OF CONTENTS
+    ============================================ */
+    .toc-list {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .toc-item {
+      display: flex;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--neutral-100);
+    }
+
+    .toc-number {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--red-600);
+      width: 36px;
+      flex-shrink: 0;
+    }
+
+    .toc-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--neutral-800);
+      flex: 1;
+    }
+
+    .toc-page {
+      font-size: 12px;
+      color: var(--neutral-400);
+      font-weight: 500;
+    }
+
+    /* ============================================
+       COLOR SWATCHES
+    ============================================ */
+    .color-group {
+      margin-bottom: 28px;
+    }
+
+    .color-group-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--neutral-500);
+      margin-bottom: 12px;
+    }
+
+    .color-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .color-swatch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80px;
+    }
+
+    .color-swatch-box {
+      width: 72px;
+      height: 56px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .color-swatch-name {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--neutral-700);
+      text-align: center;
+    }
+
+    .color-swatch-hex {
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--neutral-400);
+      font-family: monospace;
+    }
+
+    /* ============================================
+       TYPOGRAPHY SAMPLES
+    ============================================ */
+    .type-sample {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--neutral-100);
+    }
+
+    .type-sample:last-child {
+      border-bottom: none;
+    }
+
+    .type-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 6px;
+    }
+
+    .type-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--red-600);
+      background: var(--red-50);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .type-spec {
+      font-size: 10px;
+      color: var(--neutral-400);
+      font-family: monospace;
+    }
+
+    .type-preview-h1 { font-size: 48px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--neutral-900); }
+    .type-preview-h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.2; color: var(--neutral-900); }
+    .type-preview-h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; line-height: 1.3; color: var(--neutral-900); }
+    .type-preview-h4 { font-size: 16px; font-weight: 700; line-height: 1.4; color: var(--neutral-900); }
+    .type-preview-body { font-size: 15px; font-weight: 400; line-height: 1.7; color: var(--neutral-600); }
+    .type-preview-caption { font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--neutral-500); }
+    .type-preview-overline { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red-600); }
+
+    /* ============================================
+       COMPONENT PREVIEWS
+    ============================================ */
+    .component-box {
+      background: var(--neutral-50);
+      border: 1px solid var(--neutral-200);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .component-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--neutral-400);
+      margin-bottom: 16px;
+    }
+
+    /* Buttons */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      font-family: var(--font-main);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--red-700);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid var(--white);
+    }
+
+    .btn-secondary-dark {
+      background: transparent;
+      color: var(--neutral-800);
+      border: 1.5px solid var(--neutral-800);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--red-700);
+      padding: 12px 0;
+      letter-spacing: 1px;
+    }
+
+    .btn-ghost::after {
+      content: ' \2192';
+    }
+
+    /* Navbar Preview */
+    .navbar-preview {
+      background: #232324;
+      border: 1px solid var(--neutral-700);
+      border-radius: 8px;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .navbar-logo {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .navbar-logo-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--white);
+      border-radius: 2px;
+    }
+
+    .navbar-tag {
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--neutral-400);
+      border: 1px solid var(--neutral-600);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .navbar-link {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--neutral-400);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .navbar-link.active {
+      color: var(--white);
+    }
+
+    .navbar-cta {
+      background: var(--red-700);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 8px 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Stat Card */
+    .stat-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    .stat-card {
+      flex: 1;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat-card-dark {
+      background: var(--neutral-900);
+      color: var(--white);
+      border-radius: 6px;
+    }
+
+    .stat-card-red {
+      background: var(--red-700);
+      color: var(--white);
+      border-radius: 6px;
+    }
+
+    .stat-card-crimson-gradient {
+      background: linear-gradient(135deg, var(--red-700), var(--red-800));
+      color: var(--white);
+      border-radius: 6px;
+    }
+
+    .stat-number {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* Subsidiary Card */
+    .sub-card-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .sub-card {
+      flex: 1;
+      background: var(--white);
+      border: 1px solid var(--neutral-200);
+      border-radius: 8px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sub-card-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--red-700);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sub-card-icon span {
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .sub-card-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--neutral-800);
+    }
+
+    .sub-card-desc {
+      font-size: 9px;
+      color: var(--neutral-500);
+    }
+
+    .sub-card-stat {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--neutral-900);
+      margin-left: auto;
+    }
+
+    /* ============================================
+       SECTION BLUEPRINT (LAYOUT DIAGRAM)
+    ============================================ */
+    .layout-diagram {
+      background: var(--neutral-50);
+      border: 1px solid var(--neutral-200);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .layout-section {
+      padding: 12px 16px;
+      border-bottom: 1px dashed var(--neutral-200);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 44px;
+    }
+
+    .layout-section:last-child {
+      border-bottom: none;
+    }
+
+    .layout-section-num {
+      font-size: 9px;
+      font-weight: 800;
+      color: var(--white);
+      background: var(--red-700);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .layout-section-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--neutral-800);
+      flex: 1;
+    }
+
+    .layout-section-type {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--neutral-400);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .layout-section.hero {
+      background: linear-gradient(135deg, var(--red-800), var(--neutral-900));
+      min-height: 80px;
+    }
+
+    .layout-section.hero .layout-section-name,
+    .layout-section.hero .layout-section-type {
+      color: var(--white);
+    }
+
+    .layout-section.hero .layout-section-type {
+      opacity: 0.6;
+    }
+
+    .layout-section.dark {
+      background: var(--neutral-900);
+    }
+
+    .layout-section.dark .layout-section-name,
+    .layout-section.dark .layout-section-type {
+      color: var(--white);
+    }
+
+    .layout-section.dark .layout-section-type {
+      opacity: 0.5;
+    }
+
+    .layout-section.red {
+      background: var(--red-700);
+    }
+
+    .layout-section.red .layout-section-name,
+    .layout-section.red .layout-section-type {
+      color: var(--white);
+    }
+
+    .layout-section.red .layout-section-type {
+      opacity: 0.7;
+    }
+
+    /* ============================================
+       SPACING SYSTEM
+    ============================================ */
+    .spacing-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .spacing-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .spacing-visual {
+      background: var(--red-100);
+      border: 1px solid var(--red-200);
+      border-radius: 4px;
+    }
+
+    .spacing-name {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--neutral-600);
+    }
+
+    .spacing-value {
+      font-size: 9px;
+      color: var(--neutral-400);
+      font-family: monospace;
+    }
+
+    /* ============================================
+       INFO TABLE
+    ============================================ */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .info-table th {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--neutral-400);
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 2px solid var(--neutral-200);
+    }
+
+    .info-table td {
+      font-size: 12px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--neutral-100);
+      color: var(--neutral-700);
+      vertical-align: top;
+    }
+
+    .info-table td:first-child {
+      font-weight: 600;
+      color: var(--neutral-800);
+    }
+
+    .info-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ============================================
+       GRID PREVIEW
+    ============================================ */
+    .grid-preview {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .grid-col {
+      flex: 1;
+      height: 48px;
+      background: var(--red-50);
+      border: 1px solid var(--red-100);
+      border-radius: 4px;
+    }
+
+    /* ============================================
+       ASSET MAP
+    ============================================ */
+    .asset-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--neutral-100);
+    }
+
+    .asset-thumb {
+      width: 64px;
+      height: 40px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      border: 1px solid var(--neutral-200);
+    }
+
+    .asset-info {
+      flex: 1;
+    }
+
+    .asset-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--neutral-800);
+    }
+
+    .asset-usage {
+      font-size: 10px;
+      color: var(--neutral-400);
+    }
+
+    /* ============================================
+       VISUAL EFFECT DEMO
+    ============================================ */
+    .effect-demo {
+      width: 100%;
+      height: 100px;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .effect-geometric {
+      background: var(--red-800);
+      overflow: hidden;
+    }
+
+    .effect-geometric img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .effect-overlay {
+      background: var(--red-900);
+      overflow: hidden;
+    }
+
+    .effect-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+    }
+
+    /* ============================================
+       CALLOUT BOX
+    ============================================ */
+    .callout {
+      background: var(--red-50);
+      border-left: 3px solid var(--red-600);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .callout p {
+      font-size: 12px;
+      color: var(--neutral-700);
+      line-height: 1.6;
+    }
+
+    .callout strong {
+      color: var(--red-700);
+    }
+
+    /* ============================================
+       UTILITY
+    ============================================ */
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .gap-8 { gap: 8px; }
+    .gap-12 { gap: 12px; }
+    .gap-16 { gap: 16px; }
+    .gap-24 { gap: 24px; }
+    .mt-auto { margin-top: auto; }
+    .mb-8 { margin-bottom: 8px; }
+    .mb-12 { margin-bottom: 12px; }
+    .mb-16 { margin-bottom: 16px; }
+    .mb-24 { margin-bottom: 24px; }
+    .mb-32 { margin-bottom: 32px; }
+    .mb-48 { margin-bottom: 48px; }
+    .text-center { text-align: center; }
+    .flex-1 { flex: 1; }
+
+    .tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    .tag-red { background: var(--red-50); color: var(--red-700); }
+    .tag-dark { background: var(--neutral-100); color: var(--neutral-600); }
+
+    .divider {
+      height: 1px;
+      background: var(--neutral-200);
+      margin: 24px 0;
+    }
+
+    .two-col {
+      display: flex;
+      gap: 24px;
+    }
+
+    .two-col > * {
+      flex: 1;
+    }
+
+    .section-detail {
+      margin-bottom: 20px;
+    }
+
+    .section-detail-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--neutral-800);
+      margin-bottom: 6px;
+    }
+
+    .section-detail-content {
+      font-size: 12px;
+      color: var(--neutral-600);
+      line-height: 1.7;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--neutral-500);
+      background: var(--neutral-100);
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+
+    .footer-bar {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--neutral-200);
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      color: var(--neutral-400);
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================
+       PAGE 1: COVER
+  ======================================== -->
+  <div class="page">
+    <div class="cover page-inner">
+      <div class="cover-bg"><img src="assets/hero-bg.webp" alt=""></div>
+      <div class="angular-line angular-line-1"></div>
+      <div class="angular-line angular-line-2"></div>
+      <div class="angular-line angular-line-3"></div>
+
+      <div class="cover-logo">
+        <img src="assets/logo-nuskara.webp" alt="Nuskara Logo">
+      </div>
+
+      <div class="cover-title">
+        <div class="cover-subtitle">Mini Brand Blueprint</div>
+        <h1>NUSKARA<br><span>Single Page</span><br>Website</h1>
+      </div>
+
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Client</span>
+          <span class="cover-meta-value">PT Nuskara Karya Raya Indonesia</span>
+        </div>
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Prepared by</span>
+          <span class="cover-meta-value">PT Luminara Digi Lab</span>
+        </div>
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Date</span>
+          <span class="cover-meta-value">February 2026</span>
+        </div>
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Version</span>
+          <span class="cover-meta-value">2.0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       PAGE 2: TABLE OF CONTENTS
+  ======================================== -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-header-brand">Nuskara</span>
+        <span class="page-header-section">Table of Contents</span>
+      </div>
+
+      <div class="section-number">Overview</div>
+      <div class="section-title">Table of Contents</div>
+      <div class="section-desc">Panduan visual dan teknis untuk pengembangan website single-page Nuskara Holding.</div>
+
+      <ul class="toc-list">
+        <li class="toc-item">
+          <span class="toc-number">01</span>
+          <span class="toc-label">Brand Foundation</span>
+          <span class="toc-page">03</span>
+        </li>
+        <li class="toc-item">
+          <span class="toc-number">02</span>
+          <span class="toc-label">Color System</span>
+          <span class="toc-page">04</span>
+        </li>
+        <li class="toc-item">
+          <span class="toc-number">03</span>
+          <span class="toc-label">Typography System</span>
+          <span class="toc-page">05</span>
+        </li>
+        <li class="toc-item">
+          <span class="toc-number">04</span>
+          <span class="toc-label">Logo Usage</span>
+          <span class="toc-page">06</span>
+        </li>
+        <li class="toc-item">
+          <span class="toc-number">05</span>
+          <span class="toc-label">Spacing & Grid System</span>
+          <span class="toc-page">07</span>
+        </li>
+        <li class="toc-item">
+          <span class="toc-number">06</span>
+          <span class="toc-label">Component Library</span>
+          <span class="toc-page">08</span>
+        </li>
+        <li class="toc-item">
+          <span class="toc-number">07</span>
+          <span class="toc-label">Section-by-Section Blueprint</span>
+          <span class="toc-page">09</span>
+        </li>
+        <li class="toc-item">
+          <span class="toc-number">08</span>
+          <span class="toc-label">Visual Effects & Interactions</span>
+          <span class="toc-page">11</span>
+        </li>
+        <li class="toc-item">
+          <span class="toc-number">09</span>
+          <span class="toc-label">Responsive Strategy</span>
+          <span class="toc-page">12</span>
+        </li>
+        <!-- Asset Mapping removed -->
+      </ul>
+
+      <div class="footer-bar">
+        <span>NUSKARA MINI BRAND BLUEPRINT</span>
+        <span>CONFIDENTIAL</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       PAGE 3: BRAND FOUNDATION
+  ======================================== -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-header-brand">Nuskara</span>
+        <span class="page-header-section">01 &mdash; Brand Foundation</span>
+      </div>
+
+      <div class="section-number">Section 01</div>
+      <div class="section-title">Brand Foundation</div>
+      <div class="section-desc">Fondasi strategis yang mendasari setiap keputusan desain pada website Nuskara.</div>
+
+      <div class="callout mb-24">
+        <p><strong>Design Philosophy: "Designed, not Built"</strong><br>
+        NUSKARA bukan operator. NUSKARA adalah pintu utama. Website harus terasa "designed" &mdash; mencerminkan perusahaan yang merancang sistem, keputusan, dan tata kelola proyek.</p>
+      </div>
+
+      <div class="two-col mb-32">
+        <div>
+          <div class="section-detail">
+            <div class="section-detail-title">Brand Positioning</div>
+            <div class="section-detail-content">
+              Holding company yang mengendalikan, mengatur, dan mengotorisasi proyek-proyek berskala besar lintas industri melalui struktur governance, kontrol, dan legitimasi korporasi.
+            </div>
+          </div>
+          <div class="section-detail">
+            <div class="section-detail-title">Kata Kunci</div>
+            <div style="margin-top: 8px;">
+              <span class="badge">Holding Authority</span>
+              <span class="badge">Project Gatekeeper</span>
+              <span class="badge">Corporate Control</span>
+              <span class="badge">Institutional Trust</span>
+              <span class="badge">Strategic Ownership</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="section-detail">
+            <div class="section-detail-title">Target Audience</div>
+            <div class="section-detail-content">
+              Board members, regulators, institutional partners, dan strategic investors yang memvalidasi otoritas, governance, dan legitimasi perusahaan.
+            </div>
+          </div>
+          <div class="section-detail">
+            <div class="section-detail-title">5-Second Perception Test</div>
+            <div class="section-detail-content">
+              Saat pertama kali membuka website, pengunjung harus langsung merasakan:<br>
+              &bull; "Ini institusi serius"<br>
+              &bull; "Ini bukan operator kecil"<br>
+              &bull; "Proyek di sini dikelola secara formal"<br>
+              &bull; "Ini pintu resmi, bukan middleman"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-detail">
+        <div class="section-detail-title">Tone of Voice</div>
+        <table class="info-table">
+          <tr>
+            <td style="width: 140px;">Karakter</td>
+            <td>Formal, calm, authoritative</td>
+          </tr>
+          <tr>
+            <td>Aman untuk</td>
+            <td>Board members, regulators, institutional partners</td>
+          </tr>
+          <tr>
+            <td>Hindari</td>
+            <td>Sales-oriented, bombastis, marketing language, industrial imagery</td>
+          </tr>
+          <tr>
+            <td>Fungsi website</td>
+            <td>Dokumen legitimasi, bukan sales tool</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="footer-bar">
+        <span>NUSKARA MINI BRAND BLUEPRINT</span>
+        <span>03</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       PAGE 4: COLOR SYSTEM
+  ======================================== -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-header-brand">Nuskara</span>
+        <span class="page-header-section">02 &mdash; Color System</span>
+      </div>
+
+      <div class="section-number">Section 02</div>
+      <div class="section-title">Color System</div>
+      <div class="section-desc">Palet warna yang dibangun untuk menunjukkan otoritas dan keberlanjutan. Merah sebagai authority marker, bukan agresi.</div>
+
+      <!-- Primary Red -->
+      <div class="color-group">
+        <div class="color-group-title">Primary &mdash; Authority Red</div>
+        <div class="color-row">
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #7F1D1D;"></div>
+            <div class="color-swatch-name">Red 900</div>
+            <div class="color-swatch-hex">#7F1D1D</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #991B1B;"></div>
+            <div class="color-swatch-name">Red 800</div>
+            <div class="color-swatch-hex">#991B1B</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #B91C1C;"></div>
+            <div class="color-swatch-name">Red 700</div>
+            <div class="color-swatch-hex">#B91C1C</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #DC2626;"></div>
+            <div class="color-swatch-name">Red 600</div>
+            <div class="color-swatch-hex">#DC2626</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #EF4444;"></div>
+            <div class="color-swatch-name">Red 500</div>
+            <div class="color-swatch-hex">#EF4444</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #FEE2E2;"></div>
+            <div class="color-swatch-name">Red 100</div>
+            <div class="color-swatch-hex">#FEE2E2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neutral -->
+      <div class="color-group">
+        <div class="color-group-title">Neutral &mdash; Corporate Foundation</div>
+        <div class="color-row">
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #0A0A0A;"></div>
+            <div class="color-swatch-name">950</div>
+            <div class="color-swatch-hex">#0A0A0A</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #171717;"></div>
+            <div class="color-swatch-name">900</div>
+            <div class="color-swatch-hex">#171717</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #404040;"></div>
+            <div class="color-swatch-name">700</div>
+            <div class="color-swatch-hex">#404040</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #737373;"></div>
+            <div class="color-swatch-name">500</div>
+            <div class="color-swatch-hex">#737373</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #D4D4D4;"></div>
+            <div class="color-swatch-name">300</div>
+            <div class="color-swatch-hex">#D4D4D4</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #F5F5F5;"></div>
+            <div class="color-swatch-name">100</div>
+            <div class="color-swatch-hex">#F5F5F5</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Special -->
+      <div class="color-group">
+        <div class="color-group-title">Special &mdash; Glow & Effects</div>
+        <div class="color-row">
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #EF4444; opacity: 0.6;"></div>
+            <div class="color-swatch-name">Glow Red</div>
+            <div class="color-swatch-hex">EF4444/60%</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #FB923C; opacity: 0.4;"></div>
+            <div class="color-swatch-name">Glow Orange</div>
+            <div class="color-swatch-hex">FB923C/40%</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #4A1010;"></div>
+            <div class="color-swatch-name">Hero Gradient</div>
+            <div class="color-swatch-hex">900 &rarr; 950</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background: #8B2020;"></div>
+            <div class="color-swatch-name">Image Overlay</div>
+            <div class="color-swatch-hex">7F1D1D/85%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p><strong>Penggunaan Warna:</strong> Merah digunakan sebagai authority marker dan penanda keputusan, BUKAN sebagai agresi visual. Dominasi visual tetap pada dark tones untuk kesan institusional. White/light digunakan untuk section yang memerlukan kesan cerah dan office-centric.</p>
+      </div>
+
+      <div class="footer-bar">
+        <span>NUSKARA MINI BRAND BLUEPRINT</span>
+        <span>04</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       PAGE 5: TYPOGRAPHY
+  ======================================== -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-header-brand">Nuskara</span>
+        <span class="page-header-section">03 &mdash; Typography System</span>
+      </div>
+
+      <div class="section-number">Section 03</div>
+      <div class="section-title">Typography System</div>
+      <div class="section-desc">Satu keluarga font untuk konsistensi dan karakter korporat yang kuat.</div>
+
+      <div class="callout mb-24">
+        <p><strong>Font Family: Inter</strong><br>
+        Dipilih karena geometris, modern, highly legible di layar, dan memiliki karakter formal tanpa terasa kaku. Tersedia gratis via Google Fonts dengan dukungan variable weight.</p>
+      </div>
+
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Display / H1</span>
+          <span class="type-spec">Inter 800 (ExtraBold) &middot; 48px &middot; -1.5px tracking &middot; 1.1 line-height</span>
+        </div>
+        <div class="type-preview-h1">Gate to Strategic<br>Project Control</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Heading / H2</span>
+          <span class="type-spec">Inter 700 (Bold) &middot; 32px &middot; -0.5px tracking &middot; 1.2 line-height</span>
+        </div>
+        <div class="type-preview-h2">Simplifying Complexity at Scale</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Subheading / H3</span>
+          <span class="type-spec">Inter 700 (Bold) &middot; 22px &middot; -0.3px tracking &middot; 1.3 line-height</span>
+        </div>
+        <div class="type-preview-h3">Strategic Locations Coverage</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Card Title / H4</span>
+          <span class="type-spec">Inter 700 (Bold) &middot; 16px &middot; 0px tracking &middot; 1.4 line-height</span>
+        </div>
+        <div class="type-preview-h4">Nuskara Secures Investment in LNG Terminal Expansion</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Body</span>
+          <span class="type-spec">Inter 400 (Regular) &middot; 15px &middot; 0px tracking &middot; 1.7 line-height</span>
+        </div>
+        <div class="type-preview-body">Comprehensive ecosystem holding company that ensures seamless execution of government-backed projects of national importance, through strategic investment, strict management, and high operational standards.</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Overline / Label</span>
+          <span class="type-spec">Inter 700 (Bold) &middot; 11px &middot; +3px tracking &middot; uppercase</span>
+        </div>
+        <div class="type-preview-overline">The Nuskara Added Value</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Caption</span>
+          <span class="type-spec">Inter 500 (Medium) &middot; 12px &middot; 0px tracking &middot; 1.5 line-height</span>
+        </div>
+        <div class="type-preview-caption">Investment | Management | Execution</div>
+      </div>
+
+      <div class="footer-bar">
+        <span>NUSKARA MINI BRAND BLUEPRINT</span>
+        <span>05</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       PAGE 6: LOGO USAGE
+  ======================================== -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-header-brand">Nuskara</span>
+        <span class="page-header-section">04 &mdash; Logo Usage</span>
+      </div>
+
+      <div class="section-number">Section 04</div>
+      <div class="section-title">Logo Usage</div>
+      <div class="section-desc">Aturan penggunaan logo "N" monogram pada website.</div>
+
+      <div class="two-col mb-32">
+        <div>
+          <div class="component-box" style="background: var(--neutral-950); display: flex; align-items: center; justify-content: center; min-height: 160px;">
+            <img src="assets/logo-nuskara.webp" alt="Nuskara Logo" style="width: 100px; height: 100px; object-fit: contain;">
+          </div>
+          <div class="component-label">Logo on Dark Background (Original)</div>
+        </div>
+        <div>
+          <div class="component-box" style="background: var(--white); display: flex; align-items: center; justify-content: center; min-height: 160px; border: 2px solid var(--neutral-200);">
+            <img src="assets/logo-nuskara.webp" alt="Nuskara Logo" style="width: 100px; height: 100px; object-fit: contain; filter: invert(1);">
+          </div>
+          <div class="component-label">Logo on Light Background (Inverted)</div>
+        </div>
+      </div>
+
+      <div class="section-detail mb-24">
+        <div class="section-detail-title">Navbar Lockup (Dark Theme)</div>
+        <div class="navbar-preview" style="margin-top: 12px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="assets/logo-nuskara-white.webp" alt="N" style="width: 28px; height: 28px; object-fit: contain;">
+            <span style="font-size: 15px; font-weight: 800; color: var(--white); letter-spacing: -0.5px;">NUSKARA</span>
+          </div>
+          <div class="navbar-links">
+            <span class="navbar-link active">Home</span>
+            <span class="navbar-link">About</span>
+            <span class="navbar-link">Our Journey</span>
+            <span class="navbar-link">Portfolio</span>
+            <span class="navbar-link">Locations</span>
+            <span class="navbar-cta">Contact Us</span>
+          </div>
+        </div>
+      </div>
+
+      <table class="info-table">
+        <tr>
+          <th>Aturan</th>
+          <th>Ketentuan</th>
+        </tr>
+        <tr>
+          <td>Minimum Size</td>
+          <td>28px height di navbar, 48px di section lain</td>
+        </tr>
+        <tr>
+          <td>Clear Space</td>
+          <td>Minimum 1x tinggi logo di setiap sisi</td>
+        </tr>
+        <tr>
+          <td>Navbar Format</td>
+          <td>White logo icon + "NUSKARA" wordmark (white text on dark bg #232324)</td>
+        </tr>
+        <tr>
+          <td>Warna di Dark BG</td>
+          <td>White variant (LOGO NUSKARA WHITE.webp)</td>
+        </tr>
+        <tr>
+          <td>Warna di Light BG</td>
+          <td>Original grayscale or inverted variant</td>
+        </tr>
+        <tr>
+          <td>Larangan</td>
+          <td>Jangan rotate, jangan ubah proporsi, jangan tambah efek shadow/glow pada logo</td>
+        </tr>
+      </table>
+
+      <div class="footer-bar">
+        <span>NUSKARA MINI BRAND BLUEPRINT</span>
+        <span>06</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       PAGE 7: SPACING & GRID
+  ======================================== -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-header-brand">Nuskara</span>
+        <span class="page-header-section">05 &mdash; Spacing & Grid</span>
+      </div>
+
+      <div class="section-number">Section 05</div>
+      <div class="section-title">Spacing & Grid System</div>
+      <div class="section-desc">Sistem spasi dan grid untuk menjaga konsistensi layout "Designed, not Built".</div>
+
+      <!-- Grid -->
+      <div class="section-detail-title mb-8">12-Column Grid</div>
+      <div class="grid-preview">
+        <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+        <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+        <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+        <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+      </div>
+      <table class="info-table mb-24">
+        <tr>
+          <td style="width: 160px;">Max Container Width</td>
+          <td><code>1280px</code></td>
+        </tr>
+        <tr>
+          <td>Column Gap (Gutter)</td>
+          <td><code>24px</code></td>
+        </tr>
+        <tr>
+          <td>Side Padding</td>
+          <td><code>64px</code> (desktop) / <code>24px</code> (mobile)</td>
+        </tr>
+      </table>
+
+      <!-- Spacing Scale -->
+      <div class="section-detail-title mb-12">Spacing Scale (base: 8px)</div>
+      <div class="spacing-row">
+        <div class="spacing-block">
+          <div class="spacing-visual" style="width: 16px; height: 16px;"></div>
+          <div class="spacing-name">2xs</div>
+          <div class="spacing-value">4px</div>
+        </div>
+        <div class="spacing-block">
+          <div class="spacing-visual" style="width: 20px; height: 20px;"></div>
+          <div class="spacing-name">xs</div>
+          <div class="spacing-value">8px</div>
+        </div>
+        <div class="spacing-block">
+          <div class="spacing-visual" style="width: 24px; height: 24px;"></div>
+          <div class="spacing-name">sm</div>
+          <div class="spacing-value">12px</div>
+        </div>
+        <div class="spacing-block">
+          <div class="spacing-visual" style="width: 28px; height: 28px;"></div>
+          <div class="spacing-name">md</div>
+          <div class="spacing-value">16px</div>
+        </div>
+        <div class="spacing-block">
+          <div class="spacing-visual" style="width: 36px; height: 36px;"></div>
+          <div class="spacing-name">lg</div>
+          <div class="spacing-value">24px</div>
+        </div>
+        <div class="spacing-block">
+          <div class="spacing-visual" style="width: 44px; height: 44px;"></div>
+          <div class="spacing-name">xl</div>
+          <div class="spacing-value">32px</div>
+        </div>
+        <div class="spacing-block">
+          <div class="spacing-visual" style="width: 56px; height: 56px;"></div>
+          <div class="spacing-name">2xl</div>
+          <div class="spacing-value">48px</div>
+        </div>
+        <div class="spacing-block">
+          <div class="spacing-visual" style="width: 68px; height: 68px;"></div>
+          <div class="spacing-name">3xl</div>
+          <div class="spacing-value">64px</div>
+        </div>
+        <div class="spacing-block">
+          <div class="spacing-visual" style="width: 80px; height: 80px;"></div>
+          <div class="spacing-name">4xl</div>
+          <div class="spacing-value">96px</div>
+        </div>
+      </div>
+
+      <!-- Section Spacing -->
+      <div class="section-detail-title mb-12">Section Spacing</div>
+      <table class="info-table mb-24">
+        <tr>
+          <th>Area</th>
+          <th>Desktop</th>
+          <th>Mobile</th>
+        </tr>
+        <tr>
+          <td>Antar Section (vertical)</td>
+          <td><code>96px - 120px</code></td>
+          <td><code>64px - 80px</code></td>
+        </tr>
+        <tr>
+          <td>Section Internal Padding</td>
+          <td><code>64px - 96px</code></td>
+          <td><code>48px - 64px</code></td>
+        </tr>
+        <tr>
+          <td>Heading ke Content</td>
+          <td><code>32px - 48px</code></td>
+          <td><code>24px - 32px</code></td>
+        </tr>
+        <tr>
+          <td>Card Internal Padding</td>
+          <td><code>24px - 32px</code></td>
+          <td><code>16px - 24px</code></td>
+        </tr>
+        <tr>
+          <td>Navbar Height</td>
+          <td><code>72px</code></td>
+          <td><code>64px</code></td>
+        </tr>
+      </table>
+
+      <!-- Breakpoints -->
+      <div class="section-detail-title mb-12">Breakpoints</div>
+      <table class="info-table">
+        <tr>
+          <th>Name</th>
+          <th>Width</th>
+          <th>Target</th>
+        </tr>
+        <tr>
+          <td>Desktop XL</td>
+          <td><code>&ge; 1440px</code></td>
+          <td>Large monitors</td>
+        </tr>
+        <tr>
+          <td>Desktop</td>
+          <td><code>&ge; 1024px</code></td>
+          <td>Standard desktop & laptop</td>
+        </tr>
+        <tr>
+          <td>Tablet</td>
+          <td><code>&ge; 768px</code></td>
+          <td>iPad, tablet landscape</td>
+        </tr>
+        <tr>
+          <td>Mobile</td>
+          <td><code>&lt; 768px</code></td>
+          <td>Smartphone</td>
+        </tr>
+      </table>
+
+      <div class="footer-bar">
+        <span>NUSKARA MINI BRAND BLUEPRINT</span>
+        <span>07</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       PAGE 8: COMPONENT LIBRARY
+  ======================================== -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-header-brand">Nuskara</span>
+        <span class="page-header-section">06 &mdash; Component Library</span>
+      </div>
+
+      <div class="section-number">Section 06</div>
+      <div class="section-title">Component Library</div>
+      <div class="section-desc">Komponen UI yang digunakan secara konsisten di seluruh halaman.</div>
+
+      <!-- Buttons -->
+      <div class="component-box mb-16">
+        <div class="component-label">Buttons</div>
+        <div class="btn-row mb-12">
+          <div class="btn btn-primary">Contact Us</div>
+          <div class="btn btn-secondary-dark">Learn More</div>
+          <div class="btn btn-ghost">See All Projects</div>
+        </div>
+        <div style="background: var(--neutral-900); padding: 16px; border-radius: 6px;">
+          <div class="btn-row">
+            <div class="btn btn-primary">Learn More</div>
+            <div class="btn btn-secondary">Explore</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="component-box mb-16">
+        <div class="component-label">Stats Bar (Crimson Gradient)</div>
+        <div class="stat-row">
+          <div class="stat-card stat-card-crimson-gradient">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years Track Record</div>
+          </div>
+          <div class="stat-card stat-card-crimson-gradient">
+            <div class="stat-number">IDR 15T+</div>
+            <div class="stat-label">Project Value</div>
+          </div>
+          <div class="stat-card stat-card-crimson-gradient">
+            <div class="stat-number">9</div>
+            <div class="stat-label">Provinces</div>
+          </div>
+          <div class="stat-card stat-card-crimson-gradient">
+            <div class="stat-number">80K+</div>
+            <div class="stat-label">Tons Distributed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subsidiary Cards -->
+      <div class="component-box mb-16">
+        <div class="component-label">Subsidiary Cards</div>
+        <div class="sub-card-row">
+          <div class="sub-card">
+            <div class="sub-card-icon"><span>DAN</span></div>
+            <div>
+              <div class="sub-card-name">DAN</div>
+              <div class="sub-card-desc">Distribution & Supply Chain</div>
+            </div>
+            <div class="sub-card-stat">129+</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-card-icon"><span>SSM</span></div>
+            <div>
+              <div class="sub-card-name">SSM</div>
+              <div class="sub-card-desc">Mining Support Service</div>
+            </div>
+            <div class="sub-card-stat">150+</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Heading Pattern -->
+      <div class="component-box">
+        <div class="component-label">Section Heading Pattern</div>
+        <div style="padding: 8px 0;">
+          <div class="type-preview-overline" style="margin-bottom: 8px;">The Nuskara Added Value</div>
+          <div class="type-preview-h2">Simplifying Complexity<br>at Scale</div>
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        <span>NUSKARA MINI BRAND BLUEPRINT</span>
+        <span>08</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       PAGE 9: SECTION BLUEPRINT (Part 1)
+  ======================================== -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-header-brand">Nuskara</span>
+        <span class="page-header-section">07 &mdash; Section Blueprint</span>
+      </div>
+
+      <div class="section-number">Section 07</div>
+      <div class="section-title">Section-by-Section Blueprint</div>
+      <div class="section-desc">Detail layout dan konten setiap section pada single page.</div>
+
+      <!-- Page Flow Diagram -->
+      <div class="layout-diagram mb-24">
+        <div class="layout-section" style="background: #232324; min-height: 36px;">
+          <div class="layout-section-num" style="background: var(--neutral-600); font-size: 8px;">N</div>
+          <div class="layout-section-name" style="font-size: 11px; color: var(--white);">Sticky Navbar</div>
+          <div class="layout-section-type" style="color: var(--neutral-400);">Fixed top, dark #232324 + backdrop-blur on scroll</div>
+        </div>
+        <div class="layout-section hero">
+          <div class="layout-section-num">1</div>
+          <div class="layout-section-name">Hero Section</div>
+          <div class="layout-section-type">Full viewport &middot; Image + gradient overlay</div>
+        </div>
+        <div class="layout-section red">
+          <div class="layout-section-num">2</div>
+          <div class="layout-section-name">Stats Bar</div>
+          <div class="layout-section-type">Crimson gradient &middot; 4 columns &middot; centered</div>
+        </div>
+        <div class="layout-section">
+          <div class="layout-section-num">3</div>
+          <div class="layout-section-name">Added Value / About</div>
+          <div class="layout-section-type">Light BG + texture &middot; Text + SVG ecosystem diagram</div>
+        </div>
+        <div class="layout-section dark" style="background: #232324;">
+          <div class="layout-section-num">4</div>
+          <div class="layout-section-name" style="color: var(--white);">Board of Directors</div>
+          <div class="layout-section-type" style="color: var(--neutral-400);">Dark #232324 &middot; Group photo + name plates + modal</div>
+        </div>
+        <div class="layout-section">
+          <div class="layout-section-num">5</div>
+          <div class="layout-section-name">Our Journey / Timeline</div>
+          <div class="layout-section-type">Light BG + texture &middot; Interactive year pills</div>
+        </div>
+        <div class="layout-section dark">
+          <div class="layout-section-num">6</div>
+          <div class="layout-section-name">Project Portfolio</div>
+          <div class="layout-section-type">Dark BG + subtle texture &middot; Card grid</div>
+        </div>
+        <div class="layout-section">
+          <div class="layout-section-num">7</div>
+          <div class="layout-section-name">Strategic Locations</div>
+          <div class="layout-section-type">Light BG + crimson texture &middot; Map + animated pins</div>
+        </div>
+        <div class="layout-section">
+          <div class="layout-section-num">8</div>
+          <div class="layout-section-name">News / Media Preview</div>
+          <div class="layout-section-type">Light BG &middot; 3 cards</div>
+        </div>
+        <div class="layout-section dark">
+          <div class="layout-section-num">9</div>
+          <div class="layout-section-name">Contact Us</div>
+          <div class="layout-section-type">Dark BG + portrait image &middot; Form + info</div>
+        </div>
+        <div class="layout-section" style="background: var(--neutral-950);">
+          <div class="layout-section-num" style="background: var(--neutral-600); font-size: 8px;">F</div>
+          <div class="layout-section-name" style="color: var(--white); font-size: 11px;">Footer</div>
+          <div class="layout-section-type" style="color: var(--neutral-500);">Logo, links, copyright</div>
+        </div>
+      </div>
+
+      <!-- Section 1: Hero -->
+      <div class="section-detail mb-24">
+        <div class="section-detail-title">
+          <span class="tag tag-red" style="margin-right: 8px;">01</span> Hero Section
+        </div>
+        <table class="info-table">
+          <tr><td style="width: 120px;">Height</td><td>100vh (full viewport)</td></tr>
+          <tr><td>Background</td><td>hero-bg.png + gradient overlay (neutral-950/75 &rarr; neutral-950/35 &rarr; neutral-950/5)</td></tr>
+          <tr><td>Layout</td><td>2 columns: Left (3/5) headline + CTA, Right (2/5) subsidiary cards</td></tr>
+          <tr><td>Headline</td><td>"GATE TO STRATEGIC PROJECT CONTROL" &mdash; H1, white, extrabold. "Holding Company" badge in white</td></tr>
+          <tr><td>Subline</td><td>"Investment | Management | Execution" &mdash; caption style with red dot separators, flex-wrap</td></tr>
+          <tr><td>CTA</td><td>"LEARN MORE" button, primary red, arrow icon</td></tr>
+          <tr><td>Right Panel</td><td>4x subsidiary mini-cards (DAN, SSM, GBN, MCA) dengan stats. Mobile: 2x2 grid</td></tr>
+          <tr><td>Visual Effect</td><td>Angular geometric light streaks overlay (CSS pseudo-elements). Staggered entrance animation</td></tr>
+        </table>
+      </div>
+
+      <!-- Section 2: Stats -->
+      <div class="section-detail">
+        <div class="section-detail-title">
+          <span class="tag tag-red" style="margin-right: 8px;">02</span> Stats Bar
+        </div>
+        <table class="info-table">
+          <tr><td style="width: 120px;">Background</td><td>Crimson gradient (red-700 to red-800), full-width bar</td></tr>
+          <tr><td>Layout</td><td>4 equal columns, centered text</td></tr>
+          <tr><td>Content</td><td>10+ Years Track Record | IDR 15T+ Project Value | 9 Provinces | 80K+ Tons Distributed</td></tr>
+          <tr><td>Style</td><td>Numbers: text-4xl lg:text-5xl extrabold white, centered. Labels: uppercase tracking</td></tr>
+          <tr><td>Interaction</td><td>Count-up animation on scroll into view (Intersection Observer)</td></tr>
+        </table>
+      </div>
+
+      <div class="footer-bar">
+        <span>NUSKARA MINI BRAND BLUEPRINT</span>
+        <span>09</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       PAGE 10: SECTION BLUEPRINT (Part 2)
+  ======================================== -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-header-brand">Nuskara</span>
+        <span class="page-header-section">07 &mdash; Section Blueprint (continued)</span>
+      </div>
+
+      <!-- Section 3: Added Value -->
+      <div class="section-detail mb-24">
+        <div class="section-detail-title">
+          <span class="tag tag-red" style="margin-right: 8px;">03</span> Added Value / About
+        </div>
+        <table class="info-table">
+          <tr><td style="width: 120px;">Background</td><td>White/Light (neutral-50) + bg-frame-2.png texture at 18% opacity</td></tr>
+          <tr><td>Layout</td><td>Overline + H2 heading, lalu 2 kolom: text kiri, animated SVG ecosystem diagram kanan (transparent bg)</td></tr>
+          <tr><td>Overline</td><td>"THE NUSKARA ADDED VALUE"</td></tr>
+          <tr><td>Heading</td><td>"SIMPLIFYING COMPLEXITY AT SCALE"</td></tr>
+          <tr><td>Body</td><td>Deskripsi governance, strategic investment, operational standards</td></tr>
+          <tr><td>Right Visual</td><td>MiningEcosystemGraphic.tsx - animated SVG with Nuskara center node, 4 subsidiary nodes, crimson connecting lines, traveling dots. Transparent background, white nodes, crimson accents</td></tr>
+          <tr><td>Grid</td><td>items-stretch (equal height columns)</td></tr>
+          <tr><td>Anchor ID</td><td>#about</td></tr>
+        </table>
+      </div>
+
+      <!-- Section 4: Board of Directors -->
+      <div class="section-detail mb-24">
+        <div class="section-detail-title">
+          <span class="tag tag-red" style="margin-right: 8px;">04</span> Board of Directors
+        </div>
+        <table class="info-table">
+          <tr><td style="width: 120px;">Background</td><td>Dark (#232324), same color as navbar for seamless blend</td></tr>
+          <tr><td>Layout</td><td>Badge ("Our Leadership") + headline ("Board of Directors" with red highlight) + group photo + 5 name plate cards</td></tr>
+          <tr><td>Group Photo</td><td>bod-together.webp, full-width (max-w-7xl), rounded corners</td></tr>
+          <tr><td>Name Plates</td><td>5-column grid (1-col mobile, 3-col tablet, 5-col desktop). Each: portrait circle, name, title. Hover: lift + red border accent</td></tr>
+          <tr><td>Modal</td><td>Click name plate opens 50/50 split modal: photo left (45%), scrollable text right (name, title, bio paragraphs, quote). Close on backdrop click or Escape key</td></tr>
+          <tr><td>Members</td><td>5 directors with individual portraits, bios, and quotes</td></tr>
+          <tr><td>Anchor ID</td><td>#board</td></tr>
+        </table>
+      </div>
+
+      <!-- Section 5: Timeline -->
+      <div class="section-detail mb-24">
+        <div class="section-detail-title">
+          <span class="tag tag-red" style="margin-right: 8px;">05</span> Our Journey / Timeline
+        </div>
+        <table class="info-table">
+          <tr><td style="width: 120px;">Background</td><td>White/Light + bg-frame-2.png texture at 18% opacity</td></tr>
+          <tr><td>Layout</td><td>Overline ("Our Journey") + heading ("Building the Ecosystem") + interactive timeline</td></tr>
+          <tr><td>Timeline UI</td><td>Horizontal row of year pill buttons (2013-2025). Active: crimson filled. Past: light red bg. Future: gray outline. Animated progress bar below</td></tr>
+          <tr><td>Content Panel</td><td>AnimatePresence transitions. Title + description for selected year. Prev/Next arrows with counter (e.g. "3/7")</td></tr>
+          <tr><td>Auto-advance</td><td>On section entrance, auto-advances from milestone 0 to 2 (stops on user interaction)</td></tr>
+          <tr><td>Milestones</td><td>7 milestones: 2013, 2015, 2018, 2020, 2022, 2024, 2025</td></tr>
+          <tr><td>Anchor ID</td><td>#timeline</td></tr>
+        </table>
+      </div>
+
+      <!-- Section 6: Portfolio -->
+      <div class="section-detail mb-24">
+        <div class="section-detail-title">
+          <span class="tag tag-red" style="margin-right: 8px;">06</span> Project Portfolio
+        </div>
+        <table class="info-table">
+          <tr><td style="width: 120px;">Background</td><td>Dark (neutral-900/neutral-950) + bg-frame-3.png subtle texture at 6% opacity</td></tr>
+          <tr><td>Layout</td><td>Heading + 3-column card grid</td></tr>
+          <tr><td>Card Content</td><td>Project image, judul proyek, deskripsi singkat</td></tr>
+          <tr><td>Card Style</td><td>Image top, text bottom, dark card bg, subtle border. Hover: lift + shadow</td></tr>
+          <tr><td>Images</td><td>Section medium 1 (LNG), medium 2 (mining), medium 3 (city infra)</td></tr>
+          <tr><td>Anchor ID</td><td>#portfolio</td></tr>
+        </table>
+      </div>
+
+      <!-- Section 7: Locations -->
+      <div class="section-detail mb-24">
+        <div class="section-detail-title">
+          <span class="tag tag-red" style="margin-right: 8px;">07</span> Strategic Locations
+        </div>
+        <table class="info-table">
+          <tr><td style="width: 120px;">Background</td><td>Light bg + locations-bg.webp (crimson geometric abstract) at 18% opacity</td></tr>
+          <tr><td>Layout</td><td>2 kolom: heading + info kiri, interactive Indonesia map kanan</td></tr>
+          <tr><td>Map</td><td>indonesia-map-transparent.png (gray silhouette, transparent bg). 9 animated dot overlays with hover tooltips</td></tr>
+          <tr><td>Map Animation</td><td>SVG connection lines from HQ (Jakarta) to all locations. Pulse wave effect (gradient opacity animation along lines). Sequential ripple on dots</td></tr>
+          <tr><td>HQ Marker</td><td>Jakarta dot larger with pulsing ring + "HQ" label badge</td></tr>
+          <tr><td>Anchor ID</td><td>#locations</td></tr>
+        </table>
+      </div>
+
+      <!-- Section 8: News -->
+      <div class="section-detail mb-24">
+        <div class="section-detail-title">
+          <span class="tag tag-red" style="margin-right: 8px;">08</span> News / Media Preview
+        </div>
+        <table class="info-table">
+          <tr><td style="width: 120px;">Background</td><td>White/Light (clean, no texture)</td></tr>
+          <tr><td>Layout</td><td>Heading + 3 article cards (placeholder/dummy)</td></tr>
+          <tr><td>Card Content</td><td>Thumbnail, tanggal, judul, excerpt</td></tr>
+          <tr><td>Note</td><td>Konten placeholder untuk sekarang, nanti terintegrasi CMS</td></tr>
+          <tr><td>Anchor ID</td><td>#news</td></tr>
+        </table>
+      </div>
+
+      <!-- Section 9: Contact -->
+      <div class="section-detail mb-24">
+        <div class="section-detail-title">
+          <span class="tag tag-red" style="margin-right: 8px;">09</span> Contact Us
+        </div>
+        <table class="info-table">
+          <tr><td style="width: 120px;">Background</td><td>Dark (neutral-900) + contact-bg.png corporate woman portrait at 15% opacity</td></tr>
+          <tr><td>Layout</td><td>2 kolom: info kontak kiri, form kanan</td></tr>
+          <tr><td>Form Fields</td><td>Name, Email, Message (textarea), Submit button</td></tr>
+          <tr><td>Info Side</td><td>Heading, alamat, email, telepon</td></tr>
+          <tr><td>Anchor ID</td><td>#contact</td></tr>
+        </table>
+      </div>
+
+      <div class="footer-bar">
+        <span>NUSKARA MINI BRAND BLUEPRINT</span>
+        <span>10</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       PAGE 11: VISUAL EFFECTS
+  ======================================== -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-header-brand">Nuskara</span>
+        <span class="page-header-section">08 &mdash; Visual Effects & Interactions</span>
+      </div>
+
+      <div class="section-number">Section 08</div>
+      <div class="section-title">Visual Effects & Interactions</div>
+      <div class="section-desc">Efek visual yang memperkuat kesan "Designed" dan institutional authority.</div>
+
+      <div class="two-col mb-24">
+        <div>
+          <div class="component-label">Hero Overlay (hero-bg.png)</div>
+          <div class="effect-demo effect-overlay">
+            <img src="assets/hero-bg.webp" alt="Hero background">
+          </div>
+          <div style="font-size: 11px; color: var(--neutral-500); line-height: 1.5;">
+            Hero section background. Gradient overlay: neutral-950/75 &rarr; neutral-950/35 &rarr; neutral-950/5 (kiri ke kanan). Angular geometric light streaks via CSS pseudo-elements.
+          </div>
+        </div>
+        <div>
+          <div class="component-label">Locations BG (locations-bg.webp)</div>
+          <div class="effect-demo effect-geometric">
+            <img src="assets/locations-bg.webp" alt="Locations background">
+          </div>
+          <div style="font-size: 11px; color: var(--neutral-500); line-height: 1.5;">
+            Crimson geometric abstract. Applied at 18% opacity di Strategic Locations section sebagai subtle background texture.
+          </div>
+        </div>
+      </div>
+
+      <div class="two-col mb-24">
+        <div>
+          <div class="component-label">Texture: bg-frame-2.png (18%)</div>
+          <div class="effect-demo effect-geometric">
+            <img src="assets/bg-frame-2.webp" alt="BG frame 2 texture">
+          </div>
+          <div style="font-size: 11px; color: var(--neutral-500); line-height: 1.5;">
+            Digunakan di Added Value dan Timeline section. Opacity 18%. Angular light streak pattern.
+          </div>
+        </div>
+        <div>
+          <div class="component-label">Texture: bg-frame-3.png (6%)</div>
+          <div class="effect-demo effect-geometric">
+            <img src="assets/bg-frame-3.webp" alt="BG frame 3 texture">
+          </div>
+          <div style="font-size: 11px; color: var(--neutral-500); line-height: 1.5;">
+            Digunakan di Portfolio section (dark bg). Opacity 6%. Subtle geometric pattern.
+          </div>
+        </div>
+      </div>
+
+      <div class="section-detail-title mb-12">Interaction Design</div>
+      <table class="info-table mb-24">
+        <tr>
+          <th>Element</th>
+          <th>Interaction</th>
+          <th>Detail</th>
+        </tr>
+        <tr>
+          <td>Navbar</td>
+          <td>Scroll Behavior</td>
+          <td>Dark #232324 base. On scroll > 80px: bg-[#232324]/95 + backdrop-blur-md + shadow-lg. Transition: 300ms</td>
+        </tr>
+        <tr>
+          <td>Menu Links</td>
+          <td>Hover</td>
+          <td>Color transition white/60 &rarr; white. Active state: white with red-500 underline</td>
+        </tr>
+        <tr>
+          <td>Menu Click</td>
+          <td>Smooth Scroll</td>
+          <td>scroll-behavior: smooth ke anchor section. Offset -72px (navbar height)</td>
+        </tr>
+        <tr>
+          <td>Primary Button</td>
+          <td>Hover</td>
+          <td>Background lighten (red-600), shadow-xl + shadow-primary-700/30. Transition: 300ms</td>
+        </tr>
+        <tr>
+          <td>Cards</td>
+          <td>Hover</td>
+          <td>translateY(-4px) + box-shadow increase. Transition: 300ms ease (Framer Motion whileHover)</td>
+        </tr>
+        <tr>
+          <td>Stats Numbers</td>
+          <td>Scroll Trigger</td>
+          <td>Count-up animation dari 0 ke target saat section masuk viewport (Intersection Observer)</td>
+        </tr>
+        <tr>
+          <td>Sections</td>
+          <td>Scroll Trigger</td>
+          <td>Fade-in + translateY(20px &rarr; 0) saat masuk viewport. Stagger 100ms antar elemen. AnimatedSection wrapper</td>
+        </tr>
+        <tr>
+          <td>BOD Name Plates</td>
+          <td>Click</td>
+          <td>Opens 50/50 split modal (photo left, text right). AnimatePresence entrance. Close: backdrop click or Escape</td>
+        </tr>
+        <tr>
+          <td>Timeline Pills</td>
+          <td>Click + Auto</td>
+          <td>Click selects year. Auto-advance on entrance (0&rarr;1&rarr;2). Prev/Next arrows. Progress bar animation</td>
+        </tr>
+        <tr>
+          <td>Map Dots</td>
+          <td>Hover + Animation</td>
+          <td>Hover: tooltip + scale(1.3). Pulse wave animation on connection lines (gradient opacity cycling). Sequential ripple on dots</td>
+        </tr>
+        <tr>
+          <td>Ecosystem SVG</td>
+          <td>Continuous</td>
+          <td>Animated traveling dots on connection lines. Center node subtle pulse. Transparent bg with white nodes, crimson strokes</td>
+        </tr>
+        <tr>
+          <td>Language Toggle</td>
+          <td>Click</td>
+          <td>EN/ID toggle in navbar. Dark bg (neutral-700). Persisted to localStorage</td>
+        </tr>
+      </table>
+
+      <div class="callout">
+        <p><strong>Prinsip Animasi:</strong> Semua animasi bersifat subtle dan profesional. Tidak ada animasi yang berlebihan atau flashy. Tujuan animasi adalah memberikan kesan polished dan premium, bukan eye-catching. Durasi: 200-500ms. Easing: ease atau cubic-bezier untuk naturalness.</p>
+      </div>
+
+      <div class="footer-bar">
+        <span>NUSKARA MINI BRAND BLUEPRINT</span>
+        <span>11</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       PAGE 12: RESPONSIVE STRATEGY
+  ======================================== -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-header-brand">Nuskara</span>
+        <span class="page-header-section">09 &mdash; Responsive Strategy</span>
+      </div>
+
+      <div class="section-number">Section 09</div>
+      <div class="section-title">Responsive Strategy</div>
+      <div class="section-desc">Pendekatan desktop-first dengan adaptasi bertahap ke layar kecil.</div>
+
+      <div class="callout mb-24">
+        <p><strong>Approach: Desktop-First</strong><br>
+        Website didesain untuk desktop terlebih dahulu, lalu diadaptasi ke layar lebih kecil. Target utama (board members, regulators) mayoritas mengakses via desktop.</p>
+      </div>
+
+      <div class="section-detail-title mb-12">Layout Changes per Breakpoint</div>
+      <table class="info-table mb-24">
+        <tr>
+          <th>Section</th>
+          <th>Desktop (&ge;1024px)</th>
+          <th>Tablet (768-1023px)</th>
+          <th>Mobile (&lt;768px)</th>
+        </tr>
+        <tr>
+          <td>Navbar</td>
+          <td>Full horizontal menu (dark)</td>
+          <td>Hamburger menu (dark)</td>
+          <td>Hamburger menu (dark)</td>
+        </tr>
+        <tr>
+          <td>Hero</td>
+          <td>2 kolom (3/5 + 2/5)</td>
+          <td>2 kolom</td>
+          <td>1 kolom, 2x2 card grid di bawah</td>
+        </tr>
+        <tr>
+          <td>Stats</td>
+          <td>4 kolom horizontal</td>
+          <td>4 kolom, font lebih kecil</td>
+          <td>2x2 grid</td>
+        </tr>
+        <tr>
+          <td>About</td>
+          <td>2 kolom (text + SVG diagram)</td>
+          <td>2 kolom</td>
+          <td>1 kolom, diagram di bawah</td>
+        </tr>
+        <tr>
+          <td>BOD</td>
+          <td>5-col name plates grid</td>
+          <td>3-col name plates grid</td>
+          <td>1-col horizontal cards (photo left, text right)</td>
+        </tr>
+        <tr>
+          <td>Timeline</td>
+          <td>Horizontal year pills + content panel</td>
+          <td>Same, smaller pills</td>
+          <td>Scrollable pills + content below</td>
+        </tr>
+        <tr>
+          <td>Portfolio</td>
+          <td>3 cards horizontal</td>
+          <td>2 + 1 cards</td>
+          <td>1 kolom stack</td>
+        </tr>
+        <tr>
+          <td>Locations</td>
+          <td>2 kolom (text + map)</td>
+          <td>1 kolom, map di bawah</td>
+          <td>1 kolom, map di bawah</td>
+        </tr>
+        <tr>
+          <td>News</td>
+          <td>3 cards horizontal</td>
+          <td>2 + 1 cards</td>
+          <td>1 kolom stack</td>
+        </tr>
+        <tr>
+          <td>Contact</td>
+          <td>2 kolom (info + form)</td>
+          <td>2 kolom</td>
+          <td>1 kolom, form di bawah</td>
+        </tr>
+      </table>
+
+      <div class="section-detail-title mb-12">Typography Scaling</div>
+      <table class="info-table">
+        <tr>
+          <th>Element</th>
+          <th>Desktop</th>
+          <th>Mobile</th>
+        </tr>
+        <tr>
+          <td>H1 (Hero)</td>
+          <td>48px</td>
+          <td>32px</td>
+        </tr>
+        <tr>
+          <td>H2 (Section)</td>
+          <td>32px</td>
+          <td>24px</td>
+        </tr>
+        <tr>
+          <td>H3</td>
+          <td>22px</td>
+          <td>18px</td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td>15px</td>
+          <td>14px</td>
+        </tr>
+        <tr>
+          <td>Stat Numbers</td>
+          <td>48px</td>
+          <td>32px</td>
+        </tr>
+      </table>
+
+      <div class="divider"></div>
+
+      <div style="text-align: center; padding: 16px 0;">
+        <div class="type-preview-overline" style="margin-bottom: 12px;">End of Document</div>
+        <div style="font-size: 13px; color: var(--neutral-500);">
+          Mini Brand Blueprint v2.0 &mdash; February 2026<br>
+          Prepared by PT Luminara Digi Lab for PT Nuskara Karya Raya Indonesia
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        <span>NUSKARA MINI BRAND BLUEPRINT</span>
+        <span>12</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
