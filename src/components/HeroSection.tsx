@@ -13,27 +13,27 @@ const subsidiaryCodes = [
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.15, delayChildren: 0.3 },
+    transition: { staggerChildren: 0.35, delayChildren: 0.7 },
   },
 };
 
-const ease = [0.25, 0.4, 0.25, 1] as [number, number, number, number];
+const ease = [0.12, 0.8, 0.25, 1] as [number, number, number, number];
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease },
+    transition: { duration: 1.5, ease },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, x: 40 },
+  hidden: { opacity: 0, x: 24 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease },
+    transition: { duration: 1.2, ease },
   },
 };
 

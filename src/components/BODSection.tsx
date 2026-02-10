@@ -5,6 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "@/i18n/LanguageContext";
 import AnimatedSection, { StaggerContainer, StaggerItem } from "./AnimatedSection";
 
+function parseBio(text: string) {
+  const parts = text.split(/(<strong>.*?<\/strong>)/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^<strong>(.*?)<\/strong>$/);
+    if (match) {
+      return <strong key={i} className="text-white/80 font-semibold">{match[1]}</strong>;
+    }
+    return part;
+  });
+}
+
 export default function BODSection() {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -163,7 +174,7 @@ export default function BODSection() {
                         key={i}
                         className="text-sm text-white/60 leading-relaxed"
                       >
-                        {paragraph}
+                        {parseBio(paragraph)}
                       </p>
                     ))}
                   </div>
