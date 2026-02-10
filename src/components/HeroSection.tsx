@@ -119,22 +119,9 @@ export default function HeroSection() {
             <motion.a
               variants={itemVariants}
               href="#about"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary-700 text-white font-semibold text-sm tracking-wide rounded hover:bg-primary-600 transition-all duration-300 hover:shadow-xl hover:shadow-primary-700/30 group"
+              className="inline-flex items-center px-8 py-3.5 bg-primary-700 text-white font-semibold text-sm tracking-wide rounded hover:bg-primary-600 transition-all duration-300 hover:shadow-xl hover:shadow-primary-700/30"
             >
               {t.hero.cta}
-              <svg
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
             </motion.a>
           </motion.div>
 

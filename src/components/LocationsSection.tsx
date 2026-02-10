@@ -70,18 +70,9 @@ export default function LocationsSection() {
           <AnimatedSection delay={0.4}>
             <a
               href="#portfolio"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary-700 text-white font-semibold text-sm tracking-wide rounded hover:bg-primary-600 transition-all duration-300 hover:shadow-xl hover:shadow-primary-700/30 group flex-shrink-0"
+              className="inline-flex items-center px-8 py-3.5 bg-primary-700 text-white font-semibold text-sm tracking-wide rounded hover:bg-primary-600 transition-all duration-300 hover:shadow-xl hover:shadow-primary-700/30 flex-shrink-0"
             >
               {t.locations.cta}
-              <svg
-                className="w-4 h-4 transition-transform group-hover:translate-x-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
             </a>
           </AnimatedSection>
         </div>
