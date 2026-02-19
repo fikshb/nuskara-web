@@ -3,27 +3,33 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "@/i18n/LanguageContext";
 
-// SVG viewBox
-const W = 420;
+// SVG dimensions
+const W = 500;
 const H = 500;
 
 // Center hub
-const CX = 210;
-const CY = 240;
-const CR = 44;
+const CX = 250;
+const CY = 250;
+const CR = 40;
 
-// Satellite node radius
-const NR = 32;
+// Satellite config
+const NR = 26;
+const ORBIT_R = 155;
+const NUM_NODES = 8;
+const START_ANGLE = -Math.PI / 2;
+const ANGLE_STEP = (2 * Math.PI) / NUM_NODES;
 
-// Diamond layout: top, right, bottom, left
-const satellites = [
-  { x: 210, y: 80 },
-  { x: 370, y: 240 },
-  { x: 210, y: 400 },
-  { x: 50, y: 240 },
-];
+// Calculate satellite positions (clockwise from top)
+// Order: DAN, SSM, MCA, TNI, GBN, FARDIS, AMN, PGBN
+const satellites = Array.from({ length: NUM_NODES }, (_, i) => {
+  const angle = START_ANGLE + i * ANGLE_STEP;
+  return {
+    x: Math.round(CX + ORBIT_R * Math.cos(angle)),
+    y: Math.round(CY + ORBIT_R * Math.sin(angle)),
+  };
+});
 
-// Pre-calculate line endpoints (edge-to-edge, not center-to-center)
+// Line endpoints: center → each satellite (edge-to-edge)
 const lines = satellites.map((s) => {
   const dx = s.x - CX;
   const dy = s.y - CY;
@@ -46,7 +52,6 @@ export default function MiningEcosystemGraphic() {
 
   return (
     <div className="relative w-full h-full min-h-[400px]">
-      {/* Ecosystem diagram */}
       <motion.svg
         viewBox={`0 0 ${W} ${H}`}
         className="relative w-full h-full"
@@ -56,15 +61,13 @@ export default function MiningEcosystemGraphic() {
         viewport={{ once: true, margin: "-80px" }}
       >
         <defs>
-          <radialGradient id="ecosystemGlow" cx="50%" cy="48%" r="45%">
+          <radialGradient id="ecosystemGlow" cx="50%" cy="50%" r="45%">
             <stop offset="0%" stopColor="#B91C1C" stopOpacity="0.08" />
             <stop offset="100%" stopColor="#B91C1C" stopOpacity="0" />
           </radialGradient>
-          {/* Shadow filter for nodes */}
           <filter id="nodeShadow" x="-30%" y="-30%" width="160%" height="160%">
             <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000" floodOpacity="0.12" />
           </filter>
-          {/* Glow filter for traveling dots */}
           <filter id="dotGlow" x="-100%" y="-100%" width="300%" height="300%">
             <feGaussianBlur stdDeviation="3" result="blur" />
             <feMerge>
@@ -75,10 +78,10 @@ export default function MiningEcosystemGraphic() {
         </defs>
 
         {/* Background radial glow */}
-        <circle cx={CX} cy={CY} r="180" fill="url(#ecosystemGlow)" />
+        <circle cx={CX} cy={CY} r="200" fill="url(#ecosystemGlow)" />
 
         {/* Decorative concentric rings */}
-        {[100, 140, 180].map((r, i) => (
+        {[80, 120, 160].map((r, i) => (
           <motion.circle
             key={`ring-${r}`}
             cx={CX}
@@ -98,7 +101,7 @@ export default function MiningEcosystemGraphic() {
           />
         ))}
 
-        {/* Connecting lines (animated draw) */}
+        {/* Connecting lines: center → satellites */}
         {lines.map((l, i) => (
           <motion.path
             key={`line-${i}`}
@@ -112,19 +115,19 @@ export default function MiningEcosystemGraphic() {
                 pathLength: 1,
                 opacity: 0.35,
                 transition: {
-                  pathLength: { duration: 0.7, delay: 0.5 + i * 0.1, ease },
-                  opacity: { duration: 0.3, delay: 0.5 + i * 0.1 },
+                  pathLength: { duration: 0.6, delay: 0.5 + i * 0.07, ease },
+                  opacity: { duration: 0.3, delay: 0.5 + i * 0.07 },
                 },
               },
             }}
           />
         ))}
 
-        {/* Traveling dots along lines (pulse outward from center) */}
+        {/* Traveling dots: center → satellites */}
         {lines.map((l, i) => (
           <motion.circle
             key={`travel-${i}`}
-            r="3.5"
+            r="3"
             fill="#B91C1C"
             filter="url(#dotGlow)"
             animate={{
@@ -136,8 +139,8 @@ export default function MiningEcosystemGraphic() {
               duration: 2,
               repeat: Infinity,
               ease: "easeInOut",
-              delay: 2 + i * 0.7,
-              repeatDelay: 1.5,
+              delay: 2 + i * 0.45,
+              repeatDelay: 2,
             }}
           />
         ))}
@@ -170,7 +173,7 @@ export default function MiningEcosystemGraphic() {
             textAnchor="middle"
             dominantBaseline="central"
             fill="white"
-            fontSize="24"
+            fontSize="22"
             fontWeight="900"
             fontFamily="Inter, sans-serif"
             letterSpacing="1"
@@ -179,7 +182,7 @@ export default function MiningEcosystemGraphic() {
           </text>
         </motion.g>
 
-        {/* Center pulse ring (continuous) */}
+        {/* Center pulse ring */}
         <motion.circle
           cx={CX}
           cy={CY}
@@ -207,12 +210,11 @@ export default function MiningEcosystemGraphic() {
               visible: {
                 opacity: 1,
                 scale: 1,
-                transition: { duration: 0.5, delay: 0.9 + i * 0.12, ease },
+                transition: { duration: 0.5, delay: 0.9 + i * 0.08, ease },
               },
             }}
             style={{ transformOrigin: `${s.x}px ${s.y}px` }}
           >
-            {/* Node circle */}
             <circle
               cx={s.x}
               cy={s.y}
@@ -222,27 +224,23 @@ export default function MiningEcosystemGraphic() {
               strokeWidth="1.5"
               filter="url(#nodeShadow)"
             />
-
-            {/* Abbreviation text */}
             <text
               x={s.x}
               y={s.y + 1}
               textAnchor="middle"
               dominantBaseline="central"
               fill="#B91C1C"
-              fontSize="13"
+              fontSize={nodes[i].abbr.length > 3 ? "10" : "12"}
               fontWeight="700"
               fontFamily="Inter, sans-serif"
               letterSpacing="0.5"
             >
               {nodes[i].abbr}
             </text>
-
-            {/* Label backdrop */}
             <rect
-              x={s.x - 40}
+              x={s.x - 45}
               y={s.y + NR + 4}
-              width="80"
+              width="90"
               height="18"
               rx="4"
               fill="white"
@@ -250,15 +248,13 @@ export default function MiningEcosystemGraphic() {
               strokeWidth="0.5"
               filter="url(#nodeShadow)"
             />
-
-            {/* Service label below node */}
             <text
               x={s.x}
               y={s.y + NR + 14}
               textAnchor="middle"
               dominantBaseline="central"
               fill="#525252"
-              fontSize="10"
+              fontSize="9"
               fontWeight="500"
               fontFamily="Inter, sans-serif"
             >

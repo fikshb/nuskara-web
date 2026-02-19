@@ -43,8 +43,8 @@ export default function BODSection() {
 
   return (
     <section id="board" className="relative overflow-hidden bg-[#232324]">
-      {/* Header - compact */}
-      <div className="max-w-7xl mx-auto px-6 pt-20 lg:pt-24 pb-8 text-center">
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-6 pt-20 lg:pt-24 pb-10 text-center">
         <AnimatedSection>
           <span className="text-xs font-bold tracking-[0.2em] text-primary-500 uppercase">
             {t.bod.badge}
@@ -58,21 +58,8 @@ export default function BODSection() {
         </AnimatedSection>
       </div>
 
-      {/* Group Photo - constrained height */}
-      <AnimatedSection delay={0.15}>
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="relative rounded-xl overflow-hidden">
-            <img
-              src="/images/bod-together.webp"
-              alt="Board of Directors"
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Name Plates - tight below photo */}
-      <div className="max-w-7xl mx-auto px-6 pt-6 pb-20 lg:pb-24">
+      {/* Member Cards */}
+      <div className="max-w-7xl mx-auto px-6 pb-20 lg:pb-24">
         <StaggerContainer
           className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3"
           staggerDelay={0.1}
@@ -85,7 +72,7 @@ export default function BODSection() {
                 className="w-full text-left p-4 rounded-lg bg-white/[0.03] border border-white/[0.06] cursor-pointer transition-all duration-300 hover:bg-white/[0.07] hover:border-primary-500/40 hover:shadow-lg hover:shadow-primary-700/10 group flex items-center gap-4 md:block"
               >
                 {/* Portrait circle */}
-                <div className="w-12 h-12 md:w-10 md:h-10 shrink-0 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-primary-500/50 transition-colors duration-300 md:mb-3">
+                <div className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-primary-500/50 transition-colors duration-300 md:mb-3">
                   <img
                     src={m.photo}
                     alt={m.name}

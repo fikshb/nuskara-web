@@ -14,7 +14,7 @@ export default function NewsSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="news" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="csr" className="relative py-24 lg:py-32 overflow-hidden">
       {/* Top crimson accent line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-700/40 to-transparent" />
       <div className="max-w-7xl mx-auto px-6">
@@ -35,7 +35,7 @@ export default function NewsSection() {
           </div>
           <AnimatedSection delay={0.2}>
             <a
-              href="#news"
+              href="#csr"
               className="text-sm font-semibold text-neutral-400 hover:text-primary-700 transition-colors"
             >
               {t.news.viewAll}

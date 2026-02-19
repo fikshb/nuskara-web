@@ -63,8 +63,12 @@ const en = {
       nodes: [
         { abbr: "DAN", label: "Distribution" },
         { abbr: "SSM", label: "Blasting" },
-        { abbr: "GBN", label: "Logistics" },
         { abbr: "MCA", label: "Engineering" },
+        { abbr: "TNI", label: "TNI" },
+        { abbr: "GBN", label: "Logistics" },
+        { abbr: "FARDIS", label: "Workforce" },
+        { abbr: "AMN", label: "AMN" },
+        { abbr: "PGBN", label: "Maritime" },
       ],
     },
   },
@@ -187,34 +191,34 @@ const en = {
   },
 
   news: {
-    badge: "Latest Updates",
-    headline: "NEWS &",
-    headlineHighlight: "MEDIA",
-    viewAll: "View All News",
+    badge: "Social Responsibility",
+    headline: "CORPORATE",
+    headlineHighlight: "CSR",
+    viewAll: "View All Programs",
     articles: [
       {
-        date: "January 15, 2025",
+        date: "March 12, 2025",
         title:
-          "Nuskara Group Strengthens Mining Distribution Network in Eastern Indonesia",
+          "Educational Scholarship Program for Mining Community Youth in West Java",
         excerpt:
-          "Expanding licensed explosives distribution capacity through new strategic warehouse facilities in Kalimantan.",
-        category: "Partnership",
+          "Providing academic scholarships and vocational training opportunities for students in mining-adjacent communities.",
+        category: "Education",
       },
       {
-        date: "December 28, 2024",
+        date: "January 20, 2025",
         title:
-          "K3L Safety Standards Audit Achieves Excellent Rating Across Subsidiaries",
+          "Post-Mining Land Rehabilitation and Reforestation Initiative in Kalimantan",
         excerpt:
-          "Annual occupational health, safety, and environmental review confirms adherence to national mining regulations.",
-        category: "Compliance",
+          "Restoring ecological balance through systematic reforestation of former mining sites with native species.",
+        category: "Environment",
       },
       {
-        date: "November 10, 2024",
+        date: "November 5, 2024",
         title:
-          "New Logistics Route Supports Mining Operations in South Kalimantan",
+          "Community Health Outreach and Clean Water Access Program in Rural Areas",
         excerpt:
-          "Integrated transport route connecting Java logistics hub to mining operational zones in Kalimantan.",
-        category: "Logistics",
+          "Delivering healthcare services and clean water infrastructure to underserved communities near operational zones.",
+        category: "Community",
       },
     ],
   },
@@ -299,7 +303,7 @@ const en = {
       { label: "About Us", href: "#about" },
       { label: "Our Portfolio", href: "#portfolio" },
       { label: "Locations", href: "#locations" },
-      { label: "News & Media", href: "#news" },
+      { label: "CSR", href: "#csr" },
     ],
     subsidiariesTitle: "Subsidiaries",
     subsidiariesLinks: [
@@ -382,8 +386,12 @@ const id: typeof en = {
       nodes: [
         { abbr: "DAN", label: "Distribusi" },
         { abbr: "SSM", label: "Peledakan" },
-        { abbr: "GBN", label: "Logistik" },
         { abbr: "MCA", label: "Rekayasa" },
+        { abbr: "TNI", label: "TNI" },
+        { abbr: "GBN", label: "Logistik" },
+        { abbr: "FARDIS", label: "Tenaga Kerja" },
+        { abbr: "AMN", label: "AMN" },
+        { abbr: "PGBN", label: "Maritim" },
       ],
     },
   },
@@ -505,34 +513,34 @@ const id: typeof en = {
   },
 
   news: {
-    badge: "Pembaruan Terkini",
-    headline: "BERITA &",
-    headlineHighlight: "MEDIA",
-    viewAll: "Lihat Semua Berita",
+    badge: "Tanggung Jawab Sosial",
+    headline: "CSR",
+    headlineHighlight: "PERUSAHAAN",
+    viewAll: "Lihat Semua Program",
     articles: [
       {
-        date: "15 Januari 2025",
+        date: "12 Maret 2025",
         title:
-          "Grup Nuskara Memperkuat Jaringan Distribusi Pertambangan di Indonesia Timur",
+          "Program Beasiswa Pendidikan untuk Pemuda Komunitas Tambang di Jawa Barat",
         excerpt:
-          "Memperluas kapasitas distribusi bahan peledak berlisensi melalui fasilitas gudang strategis baru di Kalimantan.",
-        category: "Kemitraan",
+          "Memberikan beasiswa akademik dan pelatihan vokasi bagi pelajar di komunitas sekitar area pertambangan.",
+        category: "Pendidikan",
       },
       {
-        date: "28 Desember 2024",
+        date: "20 Januari 2025",
         title:
-          "Audit Standar Keselamatan K3L Meraih Peringkat Unggul di Seluruh Anak Perusahaan",
+          "Inisiatif Rehabilitasi Lahan dan Penghijauan Pasca Tambang di Kalimantan",
         excerpt:
-          "Tinjauan tahunan kesehatan, keselamatan, dan lingkungan kerja mengonfirmasi kepatuhan terhadap regulasi pertambangan nasional.",
-        category: "Kepatuhan",
+          "Memulihkan keseimbangan ekologi melalui penghijauan sistematis di bekas area tambang dengan tanaman asli.",
+        category: "Lingkungan",
       },
       {
-        date: "10 November 2024",
+        date: "5 November 2024",
         title:
-          "Rute Logistik Baru Mendukung Operasi Pertambangan di Kalimantan Selatan",
+          "Program Kesehatan Masyarakat dan Akses Air Bersih di Daerah Pedalaman",
         excerpt:
-          "Rute transportasi terintegrasi menghubungkan pusat logistik Jawa ke zona operasional pertambangan di Kalimantan.",
-        category: "Logistik",
+          "Menyediakan layanan kesehatan dan infrastruktur air bersih bagi masyarakat di sekitar zona operasional.",
+        category: "Komunitas",
       },
     ],
   },
@@ -617,7 +625,7 @@ const id: typeof en = {
       { label: "Tentang Kami", href: "#about" },
       { label: "Portofolio Kami", href: "#portfolio" },
       { label: "Lokasi", href: "#locations" },
-      { label: "Berita & Media", href: "#news" },
+      { label: "CSR", href: "#csr" },
     ],
     subsidiariesTitle: "Anak Perusahaan",
     subsidiariesLinks: [
