@@ -32,7 +32,7 @@ const en = {
   stats: {
     items: [
       { label: "Years of Track Record" },
-      { label: "Total Project Value" },
+      { label: "Industry Sectors" },
       { label: "Provinces Reached" },
     ],
   },
@@ -367,7 +367,7 @@ const id: typeof en = {
   stats: {
     items: [
       { label: "Tahun Rekam Jejak" },
-      { label: "Total Nilai Proyek" },
+      { label: "Sektor Industri" },
       { label: "Provinsi Terjangkau" },
     ],
   },

@@ -6,7 +6,7 @@ import { useTranslation } from "@/i18n/LanguageContext";
 
 const statsData = [
   { numericPart: 10, suffix: "+", prefix: "" },
-  { numericPart: 15, suffix: " T+", prefix: "IDR " },
+  { numericPart: 6, suffix: "+", prefix: "" },
   { numericPart: 9, suffix: "", prefix: "" },
 ];
 
