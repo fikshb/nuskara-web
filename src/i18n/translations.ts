@@ -205,10 +205,10 @@ const en = {
         partners: "ITB, UGM",
       },
       {
-        name: "Nuskara UMKM Maju",
+        name: "Nuskara Tumbuh Bersama",
         category: "Economic Empowerment",
         description:
-          "Developing local SMEs in operational areas through training, mentorship, and supply chain integration with the company and its clients.",
+          "Empowering local businesses and communities in operational areas through training, mentorship, and supply chain integration with the company and its partners.",
         partners: "Local Government, BLK, BRI",
       },
       {
@@ -539,10 +539,10 @@ const id: typeof en = {
         partners: "ITB, UGM",
       },
       {
-        name: "Nuskara UMKM Maju",
+        name: "Nuskara Tumbuh Bersama",
         category: "Pemberdayaan Ekonomi",
         description:
-          "Pengembangan UMKM lokal di wilayah operasi melalui pelatihan, pendampingan, dan integrasi rantai pasok perusahaan beserta klien.",
+          "Pemberdayaan usaha dan komunitas lokal di wilayah operasi melalui pelatihan, pendampingan, dan integrasi rantai pasok perusahaan beserta mitra.",
         partners: "Pemda, BLK, BRI",
       },
       {
