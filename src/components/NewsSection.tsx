@@ -90,14 +90,21 @@ export default function NewsSection() {
 
         {/* Recent Activity */}
         <AnimatedSection delay={0.5}>
-          <div className="mt-14 bg-neutral-950 rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row gap-6 lg:gap-10 items-start lg:items-center">
-            <div className="flex-shrink-0">
+          <div className="mt-14 bg-neutral-950 rounded-2xl overflow-hidden flex flex-col lg:flex-row">
+            {/* Photo */}
+            <div className="lg:w-80 flex-shrink-0">
+              <img
+                src="/images/csr-bukber-ramadan.webp"
+                alt={t.csr.activity.title}
+                className="w-full h-48 lg:h-full object-cover"
+              />
+            </div>
+            {/* Content */}
+            <div className="p-8 lg:p-10 flex flex-col justify-center">
               <span className="text-[10px] font-bold tracking-wider uppercase text-primary-700">
                 {t.csr.activityLabel}
               </span>
-              <div className="text-xs text-neutral-500 mt-1">{t.csr.activity.date}</div>
-            </div>
-            <div className="flex-1">
+              <div className="text-xs text-neutral-500 mt-1 mb-3">{t.csr.activity.date}</div>
               <h4 className="font-bold text-white text-lg leading-snug mb-2">
                 {t.csr.activity.title}
               </h4>
