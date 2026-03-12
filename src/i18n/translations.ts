@@ -219,10 +219,10 @@ const en = {
         partners: "PMI, BNPB",
       },
       {
-        name: "Nuskara Beasiswa Unggul",
+        name: "Nuskara Bangun Generasi",
         category: "Education",
         description:
-          "Scholarships for high-achieving students from underprivileged backgrounds, with priority in mining and natural resource disciplines.",
+          "Educational support for high-achieving students from underprivileged backgrounds, with priority in mining and natural resource disciplines.",
         partners: "ITB, UGM",
       },
     ],
@@ -553,10 +553,10 @@ const id: typeof en = {
         partners: "PMI, BNPB",
       },
       {
-        name: "Nuskara Beasiswa Unggul",
+        name: "Nuskara Bangun Generasi",
         category: "Pendidikan",
         description:
-          "Beasiswa bagi pelajar dan mahasiswa berprestasi dari keluarga kurang mampu, dengan prioritas bidang pertambangan dan sumber daya alam.",
+          "Dukungan pendidikan bagi pelajar dan mahasiswa berprestasi dari keluarga kurang mampu, dengan prioritas bidang pertambangan dan sumber daya alam.",
         partners: "ITB, UGM",
       },
     ],
