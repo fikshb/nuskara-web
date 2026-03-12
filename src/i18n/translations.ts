@@ -227,12 +227,22 @@ const en = {
       },
     ],
     activityLabel: "Recent Activity",
-    activity: {
-      date: "March 10, 2026",
-      title: "Ramadan 1447H Iftar Gathering at Booster Arena",
-      description:
-        "Nuskara Group hosted a communal iftar, distributing donations to orphanage children and mosque caretakers of Masjid Nurul Huda and Darul Hikmah, followed by congregational prayers and tarawih.",
-    },
+    activities: [
+      {
+        date: "March 10, 2026",
+        title: "Ramadan 1447H Iftar Gathering at Booster Arena",
+        description:
+          "Nuskara Group hosted a communal iftar, distributing donations to orphanage children and mosque caretakers of Masjid Nurul Huda and Darul Hikmah, followed by congregational prayers and tarawih.",
+        image: "/images/csr-bukber-ramadan.webp",
+      },
+      {
+        date: "November 2025",
+        title: "Nuskara Group Annual Work Meeting (RAKER)",
+        description:
+          "Strategic coordination and planning session bringing together leadership across all Nuskara subsidiaries to align corporate direction, operational targets, and growth initiatives for the year ahead.",
+        image: "/images/raker.webp",
+      },
+    ],
   },
 
   contact: {
@@ -561,12 +571,22 @@ const id: typeof en = {
       },
     ],
     activityLabel: "Aktivitas Terkini",
-    activity: {
-      date: "10 Maret 2026",
-      title: "Buka Bersama Ramadan 1447H di Booster Arena",
-      description:
-        "Nuskara Group menyelenggarakan buka puasa bersama, menyalurkan santunan kepada anak panti asuhan dan pengurus Masjid Nurul Huda serta Darul Hikmah, dilanjutkan sholat berjamaah dan tarawih.",
-    },
+    activities: [
+      {
+        date: "10 Maret 2026",
+        title: "Buka Bersama Ramadan 1447H di Booster Arena",
+        description:
+          "Nuskara Group menyelenggarakan buka puasa bersama, menyalurkan santunan kepada anak panti asuhan dan pengurus Masjid Nurul Huda serta Darul Hikmah, dilanjutkan sholat berjamaah dan tarawih.",
+        image: "/images/csr-bukber-ramadan.webp",
+      },
+      {
+        date: "November 2025",
+        title: "Rapat Kerja Tahunan (RAKER) Nuskara Group",
+        description:
+          "Sesi koordinasi dan perencanaan strategis yang mempertemukan jajaran pimpinan seluruh anak perusahaan Nuskara untuk menyelaraskan arah korporasi, target operasional, dan inisiatif pertumbuhan tahun mendatang.",
+        image: "/images/raker.webp",
+      },
+    ],
   },
 
   contact: {

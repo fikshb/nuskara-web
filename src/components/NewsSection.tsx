@@ -88,32 +88,36 @@ export default function NewsSection() {
           ))}
         </StaggerContainer>
 
-        {/* Recent Activity */}
-        <AnimatedSection delay={0.5}>
-          <div className="mt-14 bg-neutral-950 rounded-2xl overflow-hidden flex flex-col lg:flex-row">
-            {/* Photo */}
-            <div className="lg:w-80 flex-shrink-0">
-              <img
-                src="/images/csr-bukber-ramadan.webp"
-                alt={t.csr.activity.title}
-                className="w-full h-48 lg:h-full object-cover"
-              />
-            </div>
-            {/* Content */}
-            <div className="p-8 lg:p-10 flex flex-col justify-center">
-              <span className="text-[10px] font-bold tracking-wider uppercase text-primary-700">
-                {t.csr.activityLabel}
-              </span>
-              <div className="text-xs text-neutral-500 mt-1 mb-3">{t.csr.activity.date}</div>
-              <h4 className="font-bold text-white text-lg leading-snug mb-2">
-                {t.csr.activity.title}
-              </h4>
-              <p className="text-sm text-neutral-400 leading-relaxed">
-                {t.csr.activity.description}
-              </p>
-            </div>
-          </div>
-        </AnimatedSection>
+        {/* Recent Activities */}
+        <div className="mt-14 space-y-6">
+          {t.csr.activities.map((activity, i) => (
+            <AnimatedSection key={i} delay={0.5 + i * 0.15}>
+              <div className="bg-neutral-950 rounded-2xl overflow-hidden flex flex-col lg:flex-row">
+                {/* Photo */}
+                <div className="lg:w-80 flex-shrink-0">
+                  <img
+                    src={activity.image}
+                    alt={activity.title}
+                    className="w-full h-48 lg:h-full object-cover"
+                  />
+                </div>
+                {/* Content */}
+                <div className="p-8 lg:p-10 flex flex-col justify-center">
+                  <span className="text-[10px] font-bold tracking-wider uppercase text-primary-700">
+                    {t.csr.activityLabel}
+                  </span>
+                  <div className="text-xs text-neutral-500 mt-1 mb-3">{activity.date}</div>
+                  <h4 className="font-bold text-white text-lg leading-snug mb-2">
+                    {activity.title}
+                  </h4>
+                  <p className="text-sm text-neutral-400 leading-relaxed">
+                    {activity.description}
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
       </div>
     </section>
   );
