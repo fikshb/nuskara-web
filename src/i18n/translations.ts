@@ -201,29 +201,29 @@ const en = {
         name: "Nuskara Riset Kolaboratif",
         category: "Research & Academic",
         description:
-          "Research partnerships with ITB and UGM to advance mining science, environmental rehabilitation, and sustainable resource management.",
-        partners: "ITB, UGM",
+          "Research partnerships with leading national universities to advance mining science, environmental rehabilitation, and sustainable resource management.",
+        partners: "National Universities",
       },
       {
         name: "Nuskara Tumbuh Bersama",
         category: "Economic Empowerment",
         description:
           "Empowering local businesses and communities in operational areas through training, mentorship, and supply chain integration with the company and its partners.",
-        partners: "Local Government, BLK, BRI",
+        partners: "Government & Financial Institutions",
       },
       {
         name: "Nuskara Ulur Tangan",
         category: "Humanitarian",
         description:
-          "Disaster response and humanitarian aid through strategic partnerships with PMI and BNPB, supported by standby funding and trained personnel.",
-        partners: "PMI, BNPB",
+          "Disaster response and humanitarian aid through strategic partnerships with national humanitarian agencies, supported by standby funding and trained personnel.",
+        partners: "Humanitarian Agencies",
       },
       {
         name: "Nuskara Bangun Generasi",
         category: "Education",
         description:
           "Educational support for high-achieving students from underprivileged backgrounds, with priority in mining and natural resource disciplines.",
-        partners: "ITB, UGM",
+        partners: "National Universities",
       },
     ],
     activityLabel: "Recent Activity",
@@ -535,29 +535,29 @@ const id: typeof en = {
         name: "Nuskara Riset Kolaboratif",
         category: "Riset & Akademik",
         description:
-          "Kemitraan riset bersama ITB dan UGM untuk pengembangan ilmu pertambangan, rehabilitasi lingkungan, dan pengelolaan sumber daya berkelanjutan.",
-        partners: "ITB, UGM",
+          "Kemitraan riset bersama universitas unggulan nasional untuk pengembangan ilmu pertambangan, rehabilitasi lingkungan, dan pengelolaan sumber daya berkelanjutan.",
+        partners: "Universitas Nasional",
       },
       {
         name: "Nuskara Tumbuh Bersama",
         category: "Pemberdayaan Ekonomi",
         description:
           "Pemberdayaan usaha dan komunitas lokal di wilayah operasi melalui pelatihan, pendampingan, dan integrasi rantai pasok perusahaan beserta mitra.",
-        partners: "Pemda, BLK, BRI",
+        partners: "Pemerintah & Lembaga Keuangan",
       },
       {
         name: "Nuskara Ulur Tangan",
         category: "Kemanusiaan",
         description:
-          "Tanggap bencana dan bantuan kemanusiaan melalui kemitraan strategis dengan PMI dan BNPB, didukung dana siaga dan personel terlatih.",
-        partners: "PMI, BNPB",
+          "Tanggap bencana dan bantuan kemanusiaan melalui kemitraan strategis dengan lembaga kemanusiaan nasional, didukung dana siaga dan personel terlatih.",
+        partners: "Lembaga Kemanusiaan",
       },
       {
         name: "Nuskara Bangun Generasi",
         category: "Pendidikan",
         description:
           "Dukungan pendidikan bagi pelajar dan mahasiswa berprestasi dari keluarga kurang mampu, dengan prioritas bidang pertambangan dan sumber daya alam.",
-        partners: "ITB, UGM",
+        partners: "Universitas Nasional",
       },
     ],
     activityLabel: "Aktivitas Terkini",
