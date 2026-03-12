@@ -2,30 +2,30 @@
   <!-- Circle border -->
   <circle cx="100" cy="100" r="94" fill="white" stroke="#B91C1C" stroke-width="3"/>
 
-  <!-- Graduation cap above N -->
-  <path d="M100 34 L60 52 L100 70 L140 52 Z" fill="#B91C1C" opacity="0.7" stroke="#B91C1C" stroke-width="2" stroke-linejoin="round"/>
-  <!-- Cap top highlight -->
-  <path d="M100 34 L140 52 L100 62 L60 52 Z" fill="#B91C1C" opacity="0.5"/>
+  <!-- Graduation cap -->
+  <path d="M100 30 L48 56 L100 82 L152 56 Z" fill="#B91C1C" opacity="0.85" stroke="#B91C1C" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M100 30 L152 56 L100 70 L48 56 Z" fill="#B91C1C" opacity="0.6"/>
   <!-- Tassel -->
-  <path d="M140 52 L140 66" stroke="#D4A574" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="140" cy="69" r="4" fill="#D4A574"/>
+  <path d="M152 56 L152 76" stroke="#D4A574" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="152" cy="80" r="5" fill="#D4A574"/>
+  <!-- Cap drape lines -->
+  <path d="M72 68 L72 90 C72 96 84 102 100 102 C116 102 128 96 128 90 L128 68" stroke="#B91C1C" stroke-width="2.5" fill="none" opacity="0.7" stroke-linecap="round"/>
 
-  <!-- Open book below N -->
+  <!-- Open book -->
   <!-- Book spine -->
-  <path d="M100 152 L100 170" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+  <path d="M100 126 L100 174" stroke="#B91C1C" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
   <!-- Left page -->
-  <path d="M100 170 C90 168 72 166 58 170 L58 152 C72 148 90 150 100 152"
-        stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#B91C1C" fill-opacity="0.1"/>
+  <path d="M100 174 C88 170 66 168 48 174 L48 148 C66 142 88 144 100 148"
+        stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#B91C1C" fill-opacity="0.08"/>
   <!-- Right page -->
-  <path d="M100 170 C110 168 128 166 142 170 L142 152 C128 148 110 150 100 152"
-        stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#B91C1C" fill-opacity="0.1"/>
+  <path d="M100 174 C112 170 134 168 152 174 L152 148 C134 142 112 144 100 148"
+        stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#B91C1C" fill-opacity="0.08"/>
   <!-- Text lines left -->
-  <line x1="70" y1="157" x2="92" y2="155.5" stroke="#B91C1C" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-  <line x1="68" y1="162" x2="93" y2="160.5" stroke="#B91C1C" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="62" y1="155" x2="90" y2="152" stroke="#B91C1C" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="58" y1="162" x2="92" y2="159" stroke="#B91C1C" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="56" y1="169" x2="88" y2="166" stroke="#B91C1C" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
   <!-- Text lines right -->
-  <line x1="108" y1="155.5" x2="130" y2="157" stroke="#B91C1C" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-  <line x1="107" y1="160.5" x2="132" y2="162" stroke="#B91C1C" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-
-  <!-- Nuskara N - solid -->
-  <path d="M72 72 L72 142 L80 142 L80 89 L120 142 L128 142 L128 72 L120 72 L120 125 L80 72 Z" fill="#B91C1C"/>
+  <line x1="110" y1="152" x2="138" y2="155" stroke="#B91C1C" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="108" y1="159" x2="142" y2="162" stroke="#B91C1C" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="112" y1="166" x2="144" y2="169" stroke="#B91C1C" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
 </svg>

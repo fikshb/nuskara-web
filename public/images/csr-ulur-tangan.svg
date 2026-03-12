@@ -2,34 +2,33 @@
   <!-- Circle border -->
   <circle cx="100" cy="100" r="94" fill="white" stroke="#B91C1C" stroke-width="3"/>
 
-  <!-- Gold cross/plus above N -->
-  <rect x="96" y="30" width="8" height="24" rx="2" fill="#D4A574"/>
-  <rect x="88" y="38" width="24" height="8" rx="2" fill="#D4A574"/>
+  <!-- Gold cross/plus -->
+  <rect x="94" y="28" width="12" height="30" rx="3" fill="#D4A574"/>
+  <rect x="84" y="38" width="32" height="12" rx="3" fill="#D4A574"/>
 
-  <!-- Cupped hands around/below N -->
-  <!-- Left hand -->
-  <path d="M46 108 C46 98 54 88 64 86 C68 85 72 88 76 92 L84 102"
-        stroke="#B91C1C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.75"/>
-  <path d="M46 108 C44 118 48 130 56 140 L74 152 C78 154 84 154 90 150"
-        stroke="#B91C1C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.75"/>
+  <!-- Left hand cupping -->
+  <path d="M38 100 C38 86 48 74 62 70 C68 68 74 72 80 78 L90 90"
+        stroke="#B91C1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/>
+  <path d="M38 100 C36 114 40 130 52 142 L72 156 C78 160 86 160 94 156"
+        stroke="#B91C1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/>
   <!-- Left fingers -->
-  <path d="M64 86 L60 78" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-  <path d="M70 85 L68 76" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-  <path d="M76 86 L76 78" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M62 70 L56 60" stroke="#B91C1C" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+  <path d="M70 68 L66 58" stroke="#B91C1C" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+  <path d="M78 70 L78 60" stroke="#B91C1C" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
 
-  <!-- Right hand -->
-  <path d="M154 108 C154 98 146 88 136 86 C132 85 128 88 124 92 L116 102"
-        stroke="#B91C1C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.75"/>
-  <path d="M154 108 C156 118 152 130 144 140 L126 152 C122 154 116 154 110 150"
-        stroke="#B91C1C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.75"/>
+  <!-- Right hand cupping -->
+  <path d="M162 100 C162 86 152 74 138 70 C132 68 126 72 120 78 L110 90"
+        stroke="#B91C1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/>
+  <path d="M162 100 C164 114 160 130 148 142 L128 156 C122 160 114 160 106 156"
+        stroke="#B91C1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/>
   <!-- Right fingers -->
-  <path d="M136 86 L140 78" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-  <path d="M130 85 L132 76" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-  <path d="M124 86 L124 78" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M138 70 L144 60" stroke="#B91C1C" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+  <path d="M130 68 L134 58" stroke="#B91C1C" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+  <path d="M122 70 L122 60" stroke="#B91C1C" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
 
-  <!-- Hands meeting -->
-  <path d="M90 150 C96 154 104 154 110 150" stroke="#B91C1C" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.75"/>
+  <!-- Hands meeting at bottom -->
+  <path d="M94 156 C98 160 102 160 106 156" stroke="#B91C1C" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.85"/>
 
-  <!-- Nuskara N - solid -->
-  <path d="M72 70 L72 140 L80 140 L80 87 L120 140 L128 140 L128 70 L120 70 L120 123 L80 70 Z" fill="#B91C1C"/>
+  <!-- Heart in center of hands -->
+  <path d="M100 120 C100 112 90 106 84 112 C78 118 84 128 100 140 C116 128 122 118 116 112 C110 106 100 112 100 120Z" fill="#B91C1C" opacity="0.7"/>
 </svg>
