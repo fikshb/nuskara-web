@@ -190,37 +190,49 @@ const en = {
     hqLabel: "HQ",
   },
 
-  news: {
+  csr: {
     badge: "Social Responsibility",
     headline: "CORPORATE",
     headlineHighlight: "CSR",
-    viewAll: "View All Programs",
-    articles: [
+    description:
+      "Committed to creating lasting positive impact through structured programs in research, economic empowerment, humanitarian response, and education.",
+    pillars: [
       {
-        date: "March 12, 2025",
-        title:
-          "Educational Scholarship Program for Mining Community Youth in West Java",
-        excerpt:
-          "Providing academic scholarships and vocational training opportunities for students in mining-adjacent communities.",
+        name: "Nuskara Riset Kolaboratif",
+        category: "Research & Academic",
+        description:
+          "Research partnerships with ITB and UGM to advance mining science, environmental rehabilitation, and sustainable resource management.",
+        partners: "ITB, UGM",
+      },
+      {
+        name: "Nuskara UMKM Maju",
+        category: "Economic Empowerment",
+        description:
+          "Developing local SMEs in operational areas through training, mentorship, and supply chain integration with the company and its clients.",
+        partners: "Local Government, BLK, BRI",
+      },
+      {
+        name: "Nuskara Ulur Tangan",
+        category: "Humanitarian",
+        description:
+          "Disaster response and humanitarian aid through strategic partnerships with PMI and BNPB, supported by standby funding and trained personnel.",
+        partners: "PMI, BNPB",
+      },
+      {
+        name: "Nuskara Beasiswa Unggul",
         category: "Education",
-      },
-      {
-        date: "January 20, 2025",
-        title:
-          "Post-Mining Land Rehabilitation and Reforestation Initiative in Kalimantan",
-        excerpt:
-          "Restoring ecological balance through systematic reforestation of former mining sites with native species.",
-        category: "Environment",
-      },
-      {
-        date: "November 5, 2024",
-        title:
-          "Community Health Outreach and Clean Water Access Program in Rural Areas",
-        excerpt:
-          "Delivering healthcare services and clean water infrastructure to underserved communities near operational zones.",
-        category: "Community",
+        description:
+          "Scholarships for high-achieving students from underprivileged backgrounds, with priority in mining and natural resource disciplines.",
+        partners: "ITB, UGM",
       },
     ],
+    activityLabel: "Recent Activity",
+    activity: {
+      date: "March 10, 2026",
+      title: "Ramadan 1447H Iftar Gathering at Booster Arena",
+      description:
+        "Nuskara Group hosted a communal iftar, distributing donations to orphanage children and mosque caretakers of Masjid Nurul Huda and Darul Hikmah, followed by congregational prayers and tarawih.",
+    },
   },
 
   contact: {
@@ -512,37 +524,49 @@ const id: typeof en = {
     hqLabel: "KP",
   },
 
-  news: {
+  csr: {
     badge: "Tanggung Jawab Sosial",
     headline: "CSR",
     headlineHighlight: "PERUSAHAAN",
-    viewAll: "Lihat Semua Program",
-    articles: [
+    description:
+      "Berkomitmen menciptakan dampak positif berkelanjutan melalui program terstruktur di bidang riset, pemberdayaan ekonomi, kemanusiaan, dan pendidikan.",
+    pillars: [
       {
-        date: "12 Maret 2025",
-        title:
-          "Program Beasiswa Pendidikan untuk Pemuda Komunitas Tambang di Jawa Barat",
-        excerpt:
-          "Memberikan beasiswa akademik dan pelatihan vokasi bagi pelajar di komunitas sekitar area pertambangan.",
+        name: "Nuskara Riset Kolaboratif",
+        category: "Riset & Akademik",
+        description:
+          "Kemitraan riset bersama ITB dan UGM untuk pengembangan ilmu pertambangan, rehabilitasi lingkungan, dan pengelolaan sumber daya berkelanjutan.",
+        partners: "ITB, UGM",
+      },
+      {
+        name: "Nuskara UMKM Maju",
+        category: "Pemberdayaan Ekonomi",
+        description:
+          "Pengembangan UMKM lokal di wilayah operasi melalui pelatihan, pendampingan, dan integrasi rantai pasok perusahaan beserta klien.",
+        partners: "Pemda, BLK, BRI",
+      },
+      {
+        name: "Nuskara Ulur Tangan",
+        category: "Kemanusiaan",
+        description:
+          "Tanggap bencana dan bantuan kemanusiaan melalui kemitraan strategis dengan PMI dan BNPB, didukung dana siaga dan personel terlatih.",
+        partners: "PMI, BNPB",
+      },
+      {
+        name: "Nuskara Beasiswa Unggul",
         category: "Pendidikan",
-      },
-      {
-        date: "20 Januari 2025",
-        title:
-          "Inisiatif Rehabilitasi Lahan dan Penghijauan Pasca Tambang di Kalimantan",
-        excerpt:
-          "Memulihkan keseimbangan ekologi melalui penghijauan sistematis di bekas area tambang dengan tanaman asli.",
-        category: "Lingkungan",
-      },
-      {
-        date: "5 November 2024",
-        title:
-          "Program Kesehatan Masyarakat dan Akses Air Bersih di Daerah Pedalaman",
-        excerpt:
-          "Menyediakan layanan kesehatan dan infrastruktur air bersih bagi masyarakat di sekitar zona operasional.",
-        category: "Komunitas",
+        description:
+          "Beasiswa bagi pelajar dan mahasiswa berprestasi dari keluarga kurang mampu, dengan prioritas bidang pertambangan dan sumber daya alam.",
+        partners: "ITB, UGM",
       },
     ],
+    activityLabel: "Aktivitas Terkini",
+    activity: {
+      date: "10 Maret 2026",
+      title: "Buka Bersama Ramadan 1447H di Booster Arena",
+      description:
+        "Nuskara Group menyelenggarakan buka puasa bersama, menyalurkan santunan kepada anak panti asuhan dan pengurus Masjid Nurul Huda serta Darul Hikmah, dilanjutkan sholat berjamaah dan tarawih.",
+    },
   },
 
   contact: {
