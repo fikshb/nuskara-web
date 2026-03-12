@@ -5,10 +5,10 @@ import AnimatedSection, { StaggerContainer, StaggerItem } from "./AnimatedSectio
 import { useTranslation } from "@/i18n/LanguageContext";
 
 const pillarLogos = [
-  "/images/csr-riset-kolaboratif.webp",
-  "/images/csr-tumbuh-bersama.webp",
-  "/images/csr-ulur-tangan.webp",
-  "/images/csr-bangun-generasi.webp",
+  "/images/csr-riset-kolaboratif.svg",
+  "/images/csr-tumbuh-bersama.svg",
+  "/images/csr-ulur-tangan.svg",
+  "/images/csr-bangun-generasi.svg",
 ];
 
 export default function NewsSection() {

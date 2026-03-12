@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Circle border -->
+  <circle cx="100" cy="100" r="94" fill="white" stroke="#B91C1C" stroke-width="3"/>
+
+  <!-- Atom orbits behind N -->
+  <ellipse cx="100" cy="100" rx="52" ry="20" stroke="#B91C1C" stroke-width="2" fill="none" opacity="0.18" transform="rotate(-30 100 100)"/>
+  <ellipse cx="100" cy="100" rx="52" ry="20" stroke="#B91C1C" stroke-width="2" fill="none" opacity="0.18" transform="rotate(30 100 100)"/>
+  <ellipse cx="100" cy="100" rx="52" ry="20" stroke="#B91C1C" stroke-width="2" fill="none" opacity="0.18"/>
+
+  <!-- Nuskara N - solid single path -->
+  <path d="M72 65 L72 135 L80 135 L80 82 L120 135 L128 135 L128 65 L120 65 L120 118 L80 65 Z" fill="#B91C1C"/>
+
+  <!-- Gold molecular dots on orbits -->
+  <circle cx="52" cy="82" r="6" fill="#D4A574"/>
+  <circle cx="148" cy="118" r="6" fill="#D4A574"/>
+  <circle cx="80" cy="148" r="6" fill="#D4A574"/>
+</svg>
