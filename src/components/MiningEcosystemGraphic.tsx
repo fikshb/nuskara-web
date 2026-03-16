@@ -167,19 +167,13 @@ export default function MiningEcosystemGraphic() {
             strokeWidth="1"
             opacity="0.3"
           />
-          <text
-            x={CX}
-            y={CY + 1}
-            textAnchor="middle"
-            dominantBaseline="central"
-            fill="white"
-            fontSize="22"
-            fontWeight="900"
-            fontFamily="Inter, sans-serif"
-            letterSpacing="1"
-          >
-            N
-          </text>
+          <image
+            href="/images/logo-white.webp"
+            x={CX - 22}
+            y={CY - 22}
+            width="44"
+            height="44"
+          />
         </motion.g>
 
         {/* Center pulse ring */}

@@ -18,9 +18,9 @@ const en = {
     headlineHighlight: "CONTROL",
     subtitle: ["Investment", "Management", "Execution"],
     description:
-      "National holding company overseeing Indonesia's integrated mining ecosystem, from licensed explosives distribution and precision blasting to strategic logistics across the archipelago.",
+      "Nation-wide operating holding company overseeing Indonesia's integrated mining ecosystem, from licensed explosives distribution and precision blasting to strategic logistics across the archipelago.",
     cta: "LEARN MORE",
-    subsidiaryLabel: "Subsidiary Overview",
+    subsidiaryLabel: "Subsidiaries",
     subsidiaries: [
       { name: "Licensed Explosives Distribution", statLabel: "Ton/Year" },
       { name: "Precision Blasting & Drilling", statLabel: "Projects" },
@@ -43,7 +43,7 @@ const en = {
     headlineHighlight: "COMPLEXITY",
     headlineBottom: "AT SCALE",
     description:
-      "National holding company ensuring safe and compliant execution of strategically critical mining operations through strict regulatory governance, cross-subsidiary coordination, and integrated resource management across Indonesia.",
+      "Governing Excellence in Indonesian Mining. As a nation-wide operating holding company, we synchronize resource management and subsidiary operations to meet the highest standards of safety and compliance. We don't just manage mining operations; we safeguard the strategic interests of the nation.",
     values: [
       {
         title: "Mining Safety & Compliance (K3L)",
@@ -64,10 +64,10 @@ const en = {
         { abbr: "DAN", label: "Distribution" },
         { abbr: "SSM", label: "Blasting" },
         { abbr: "MCA", label: "Engineering" },
-        { abbr: "TNI", label: "TNI" },
+        { abbr: "TNI", label: "Technical Solutions" },
         { abbr: "GBN", label: "Logistics" },
         { abbr: "FARDIS", label: "Workforce" },
-        { abbr: "AMN", label: "AMN" },
+        { abbr: "AMN", label: "Production" },
         { abbr: "PGBN", label: "Maritime" },
       ],
     },
@@ -90,12 +90,12 @@ const en = {
         quote: "Success is built by creating systems that scale, endure, and deliver real impact.",
       },
       {
-        name: "Dien Hartati",
+        name: "Dien Hariati",
         title: "President Commissioner",
         photo: "/images/bod-dien.webp",
         bio: [
-          "Dien Hartati is a senior corporate banking professional with <strong>more than a decade of experience</strong>, particularly in Corporate Banking. Her career was built within the banking industry, where she held a range of strategic roles from <strong>Account Manager to Assistant Vice President</strong>, managing large-scale corporate client portfolios, conducting rigorous credit analysis, and cultivating long-term, trust-based business relationships.",
-          "As President Commissioner of PT Nusantara Karya Raya Indonesia, Dien plays a key role in <strong>safeguarding the company's strategic direction and governance framework</strong>, ensuring alignment with principles of sustainability, integrity, and long-term value creation.",
+          "Dien Hariati is a senior corporate banking professional with <strong>more than a decade of experience</strong>, particularly in Corporate Banking. Her career was built within the banking industry, where she held a range of strategic roles from <strong>Account Manager to Assistant Vice President</strong>, managing large-scale corporate client portfolios, conducting rigorous credit analysis, and cultivating long-term, trust-based business relationships.",
+          "As President Commissioner of PT Nusantara Karya Raya Indonesia, Dien Hariati plays a key role in <strong>safeguarding the company's strategic direction and governance framework</strong>, ensuring alignment with principles of sustainability, integrity, and long-term value creation.",
         ],
         quote: "Strategic leadership is not only about vision, but the courage to stay the course, even in times of constant change.",
       },
@@ -104,18 +104,18 @@ const en = {
         title: "Finance Director",
         photo: "/images/bod-sarah.webp",
         bio: [
-          "Sarah Shivina is a senior finance executive with <strong>over 25 years of experience</strong> across <strong>banking, logistics, mining, education, and international operations</strong>. With a strong academic foundation in finance and international business management, she brings a rare combination of strategic insight and hands-on operational leadership.",
+          "Sarah Shivina is a senior finance executive with <strong>over 25 years of experience</strong> across <strong>capital markets, logistics, mining, education, and international operations</strong>. With a strong academic foundation in finance and international business management, she brings a rare combination of strategic insight and hands-on operational leadership.",
           "As Finance Director of PT Nusantara Karya Raya Indonesia, Sarah leads <strong>strategic financial planning</strong> and strengthens the Group's financial structure, supporting disciplined growth and long-term value creation.",
         ],
         quote: "Vision is not only about seeing the future, but about creating one worth building.",
       },
       {
         name: "Stefaan De Beleyr",
-        title: "Chief Technology Officer",
+        title: "Chief Intelligence Officer",
         photo: "/images/bod-stefaan.webp",
         bio: [
           "Stefaan De Beleyr is a senior technology and business professional with <strong>more than 25 years of cross-industry experience</strong> spanning <strong>oil and gas, logistics, and information technology in Europe</strong>. After building his career in Belgium, he is now based in Jakarta, where he leads digital transformation and enterprise information systems at PT Nusantara Karya Raya Indonesia.",
-          "As Chief Technology Officer, Stefaan drives the company's <strong>digital strategy</strong> to enhance operational efficiency, data-driven decision-making, and long-term innovation.",
+          "As Chief Intelligence Officer, Stefaan drives the company's <strong>digital strategy</strong> to enhance operational efficiency, data-driven decision-making, and long-term innovation.",
         ],
         quote: "Digital transformation is not just about technology, but about how technology enables efficiency and innovation in pursuit of long-term vision.",
       },
@@ -319,7 +319,7 @@ const en = {
 
   footer: {
     description:
-      "PT Nuskara Karya Raya Indonesia. National holding company for Indonesia's integrated mining and resource ecosystem.",
+      "PT Nuskara Karya Raya Indonesia. Nation-wide operating holding company for Indonesia's integrated mining and resource ecosystem.",
     companyTitle: "Company",
     companyLinks: [
       { label: "About Us", href: "#about" },
@@ -363,9 +363,9 @@ const id: typeof en = {
     headlineHighlight: "STRATEGIS",
     subtitle: ["Investasi", "Manajemen", "Eksekusi"],
     description:
-      "Perusahaan induk nasional yang mengelola ekosistem pertambangan terintegrasi di Indonesia, mulai dari distribusi bahan peledak berlisensi dan peledakan presisi hingga logistik strategis di seluruh kepulauan.",
+      "Perusahaan induk berskala nasional yang mengelola ekosistem pertambangan terintegrasi di Indonesia, mulai dari distribusi bahan peledak berlisensi dan peledakan presisi hingga logistik strategis di seluruh kepulauan.",
     cta: "SELENGKAPNYA",
-    subsidiaryLabel: "Ikhtisar Anak Perusahaan",
+    subsidiaryLabel: "Anak Perusahaan",
     subsidiaries: [
       { name: "Distribusi Bahan Peledak Berlisensi", statLabel: "Ton/Tahun" },
       { name: "Peledakan & Pengeboran Presisi", statLabel: "Proyek" },
@@ -388,7 +388,7 @@ const id: typeof en = {
     headlineHighlight: "KOMPLEKSITAS",
     headlineBottom: "BERSKALA BESAR",
     description:
-      "Perusahaan induk nasional yang memastikan pelaksanaan operasi pertambangan yang aman dan patuh melalui tata kelola regulasi yang ketat, koordinasi lintas anak perusahaan, dan pengelolaan sumber daya terintegrasi di seluruh Indonesia.",
+      "Memimpin Keunggulan dalam Pertambangan Indonesia. Sebagai perusahaan induk berskala nasional, kami menyelaraskan pengelolaan sumber daya dan operasi anak perusahaan untuk memenuhi standar tertinggi keselamatan dan kepatuhan. Kami tidak hanya mengelola operasi pertambangan; kami menjaga kepentingan strategis bangsa.",
     values: [
       {
         title: "Keselamatan & Kepatuhan Pertambangan (K3L)",
@@ -409,10 +409,10 @@ const id: typeof en = {
         { abbr: "DAN", label: "Distribusi" },
         { abbr: "SSM", label: "Peledakan" },
         { abbr: "MCA", label: "Rekayasa" },
-        { abbr: "TNI", label: "TNI" },
+        { abbr: "TNI", label: "Solusi Teknis" },
         { abbr: "GBN", label: "Logistik" },
         { abbr: "FARDIS", label: "Tenaga Kerja" },
-        { abbr: "AMN", label: "AMN" },
+        { abbr: "AMN", label: "Produksi" },
         { abbr: "PGBN", label: "Maritim" },
       ],
     },
@@ -435,11 +435,11 @@ const id: typeof en = {
         quote: "Kesuksesan dibangun dengan menciptakan sistem yang dapat berkembang, bertahan, dan memberikan dampak nyata.",
       },
       {
-        name: "Dien Hartati",
+        name: "Dien Hariati",
         title: "Komisaris Utama",
         photo: "/images/bod-dien.webp",
         bio: [
-          "Dien Hartati adalah profesional perbankan korporat senior dengan <strong>pengalaman lebih dari satu dekade</strong>, khususnya di bidang Perbankan Korporasi. Kariernya dibangun dalam industri perbankan, di mana ia memegang berbagai peran strategis mulai dari <strong>Account Manager hingga Assistant Vice President</strong>, mengelola portofolio klien korporat berskala besar, melakukan analisis kredit yang ketat, dan membangun hubungan bisnis jangka panjang berbasis kepercayaan.",
+          "Dien Hariati adalah profesional perbankan korporat senior dengan <strong>pengalaman lebih dari satu dekade</strong>, khususnya di bidang Perbankan Korporasi. Kariernya dibangun dalam industri perbankan, di mana ia memegang berbagai peran strategis mulai dari <strong>Account Manager hingga Assistant Vice President</strong>, mengelola portofolio klien korporat berskala besar, melakukan analisis kredit yang ketat, dan membangun hubungan bisnis jangka panjang berbasis kepercayaan.",
           "Sebagai Komisaris Utama PT Nusantara Karya Raya Indonesia, Dien memainkan peran kunci dalam <strong>menjaga arah strategis dan kerangka tata kelola perusahaan</strong>, memastikan keselarasan dengan prinsip keberlanjutan, integritas, dan penciptaan nilai jangka panjang.",
         ],
         quote: "Kepemimpinan strategis bukan hanya tentang visi, tetapi keberanian untuk tetap pada jalur, bahkan di tengah perubahan yang terus-menerus.",
@@ -449,18 +449,18 @@ const id: typeof en = {
         title: "Direktur Keuangan",
         photo: "/images/bod-sarah.webp",
         bio: [
-          "Sarah Shivina adalah eksekutif keuangan senior dengan <strong>pengalaman lebih dari 25 tahun</strong> di bidang <strong>perbankan, logistik, pertambangan, pendidikan, dan operasi internasional</strong>. Dengan fondasi akademik yang kuat di bidang keuangan dan manajemen bisnis internasional, ia membawa kombinasi langka antara wawasan strategis dan kepemimpinan operasional langsung.",
+          "Sarah Shivina adalah eksekutif keuangan senior dengan <strong>pengalaman lebih dari 25 tahun</strong> di bidang <strong>pasar modal, logistik, pertambangan, pendidikan, dan operasi internasional</strong>. Dengan fondasi akademik yang kuat di bidang keuangan dan manajemen bisnis internasional, ia membawa kombinasi langka antara wawasan strategis dan kepemimpinan operasional langsung.",
           "Sebagai Direktur Keuangan PT Nusantara Karya Raya Indonesia, Sarah memimpin <strong>perencanaan keuangan strategis</strong> dan memperkuat struktur keuangan Grup, mendukung pertumbuhan terdisiplin dan penciptaan nilai jangka panjang.",
         ],
         quote: "Visi bukan hanya tentang melihat masa depan, tetapi tentang menciptakan masa depan yang layak dibangun.",
       },
       {
         name: "Stefaan De Beleyr",
-        title: "Chief Technology Officer",
+        title: "Chief Intelligence Officer",
         photo: "/images/bod-stefaan.webp",
         bio: [
           "Stefaan De Beleyr adalah profesional teknologi dan bisnis senior dengan <strong>pengalaman lebih dari 25 tahun lintas industri</strong> meliputi <strong>minyak dan gas, logistik, dan teknologi informasi di Eropa</strong>. Setelah membangun kariernya di Belgia, ia kini berbasis di Jakarta, di mana ia memimpin transformasi digital dan sistem informasi enterprise di PT Nusantara Karya Raya Indonesia.",
-          "Sebagai Chief Technology Officer, Stefaan mendorong <strong>strategi digital</strong> perusahaan untuk meningkatkan efisiensi operasional, pengambilan keputusan berbasis data, dan inovasi jangka panjang.",
+          "Sebagai Chief Intelligence Officer, Stefaan mendorong <strong>strategi digital</strong> perusahaan untuk meningkatkan efisiensi operasional, pengambilan keputusan berbasis data, dan inovasi jangka panjang.",
         ],
         quote: "Transformasi digital bukan hanya tentang teknologi, tetapi tentang bagaimana teknologi memungkinkan efisiensi dan inovasi dalam mengejar visi jangka panjang.",
       },
@@ -663,7 +663,7 @@ const id: typeof en = {
 
   footer: {
     description:
-      "PT Nuskara Karya Raya Indonesia. Perusahaan induk nasional untuk ekosistem pertambangan dan sumber daya terintegrasi di Indonesia.",
+      "PT Nuskara Karya Raya Indonesia. Perusahaan induk berskala nasional untuk ekosistem pertambangan dan sumber daya terintegrasi di Indonesia.",
     companyTitle: "Perusahaan",
     companyLinks: [
       { label: "Tentang Kami", href: "#about" },
