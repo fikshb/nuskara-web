@@ -63,7 +63,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="text-white font-semibold text-sm">{t.contact.emailLabel}</div>
-                    <div className="text-white/40 text-sm mt-0.5">info@nuskara.co.id</div>
+                    <div className="text-white/40 text-sm mt-0.5">admin_nuskara@nuskara.co.id</div>
                   </div>
                 </div>
 

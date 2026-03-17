@@ -8,9 +8,10 @@ const projectImages = [
   "/images/portfolio-1.webp",
   "/images/portfolio-2.webp",
   "/images/portfolio-3.webp",
+  "/images/portfolio-1.webp",
 ];
 
-const projectYears = ["2024", "2024", "2023"];
+const projectYears = ["2025", "2025", "2024", "2025"];
 
 export default function PortfolioSection() {
   const { t } = useTranslation();
@@ -61,37 +62,37 @@ export default function PortfolioSection() {
 
         {/* Project Grid */}
         <StaggerContainer
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
           staggerDelay={0.15}
         >
           {t.portfolio.projects.map((project, i) => (
             <StaggerItem key={i}>
               <motion.div
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative rounded-xl overflow-hidden bg-neutral-900 border border-white/5 hover:border-primary-700/30 transition-colors duration-300"
+                className="group relative rounded-xl overflow-hidden bg-neutral-900 border border-white/5 hover:border-primary-700/30 transition-colors duration-300 h-full flex flex-col"
               >
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-44 lg:h-40 overflow-hidden flex-shrink-0">
                   <img
                     src={projectImages[i]}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-primary-700/90 text-white text-[10px] font-bold tracking-wider uppercase rounded">
+                  <div className="absolute top-3 left-3">
+                    <span className="px-2.5 py-1 bg-primary-700/90 text-white text-[9px] font-bold tracking-wider uppercase rounded">
                       {project.category}
                     </span>
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <div className="text-xs text-white/30 font-medium mb-2">
+                <div className="p-4 lg:p-5 flex flex-col flex-1">
+                  <div className="text-[11px] text-white/30 font-medium mb-1.5">
                     {projectYears[i]}
                   </div>
-                  <h3 className="text-white font-bold text-base leading-snug group-hover:text-primary-500 transition-colors duration-300">
+                  <h3 className="text-white font-bold text-sm leading-snug group-hover:text-primary-500 transition-colors duration-300 flex-1">
                     {project.title}
                   </h3>
-                  <div className="mt-4 text-xs font-semibold text-white/40 group-hover:text-primary-500 transition-colors">
+                  <div className="mt-3 text-xs font-semibold text-white/40 group-hover:text-primary-500 transition-colors">
                     {t.portfolio.readMore}
                   </div>
                 </div>

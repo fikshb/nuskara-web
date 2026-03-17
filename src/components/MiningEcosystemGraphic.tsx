@@ -15,12 +15,12 @@ const CR = 40;
 // Satellite config
 const NR = 26;
 const ORBIT_R = 155;
-const NUM_NODES = 8;
+const NUM_NODES = 6;
 const START_ANGLE = -Math.PI / 2;
 const ANGLE_STEP = (2 * Math.PI) / NUM_NODES;
 
 // Calculate satellite positions (clockwise from top)
-// Order: DAN, SSM, MCA, TNI, GBN, FARDIS, AMN, PGBN
+// Order: DAN, SSM, TNI, GBN, AMN, PGBN
 const satellites = Array.from({ length: NUM_NODES }, (_, i) => {
   const angle = START_ANGLE + i * ANGLE_STEP;
   return {
@@ -231,29 +231,36 @@ export default function MiningEcosystemGraphic() {
             >
               {nodes[i].abbr}
             </text>
-            <rect
-              x={s.x - 45}
-              y={s.y + NR + 4}
-              width="90"
-              height="18"
-              rx="4"
-              fill="white"
-              stroke="#e5e5e5"
-              strokeWidth="0.5"
-              filter="url(#nodeShadow)"
-            />
-            <text
-              x={s.x}
-              y={s.y + NR + 14}
-              textAnchor="middle"
-              dominantBaseline="central"
-              fill="#525252"
-              fontSize="9"
-              fontWeight="500"
-              fontFamily="Inter, sans-serif"
-            >
-              {nodes[i].label}
-            </text>
+            {(() => {
+              const labelW = nodes[i].label.length > 12 ? nodes[i].label.length * 4.5 + 8 : 90;
+              return (
+                <>
+                  <rect
+                    x={s.x - labelW / 2}
+                    y={s.y + NR + 4}
+                    width={labelW}
+                    height="18"
+                    rx="4"
+                    fill="white"
+                    stroke="#e5e5e5"
+                    strokeWidth="0.5"
+                    filter="url(#nodeShadow)"
+                  />
+                  <text
+                    x={s.x}
+                    y={s.y + NR + 14}
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fill="#525252"
+                    fontSize="9"
+                    fontWeight="500"
+                    fontFamily="Inter, sans-serif"
+                  >
+                    {nodes[i].label}
+                  </text>
+                </>
+              );
+            })()}
           </motion.g>
         ))}
       </motion.svg>

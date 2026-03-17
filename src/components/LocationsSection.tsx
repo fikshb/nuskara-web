@@ -70,7 +70,7 @@ export default function LocationsSection() {
           <AnimatedSection delay={0.4}>
             <a
               href="#portfolio"
-              className="inline-flex items-center px-8 py-3.5 bg-primary-700 text-white font-semibold text-sm tracking-wide rounded hover:bg-primary-600 transition-all duration-300 hover:shadow-xl hover:shadow-primary-700/30 flex-shrink-0"
+              className="inline-flex items-center px-6 py-3 bg-primary-700 text-white font-semibold text-xs tracking-wide rounded hover:bg-primary-600 transition-all duration-300 hover:shadow-xl hover:shadow-primary-700/30 flex-shrink-0 whitespace-nowrap"
             >
               {t.locations.cta}
             </a>

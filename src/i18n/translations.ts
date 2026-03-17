@@ -25,7 +25,7 @@ const en = {
       { name: "Licensed Explosives Distribution", statLabel: "Ton/Year" },
       { name: "Precision Blasting & Drilling", statLabel: "Projects" },
       { name: "Integrated Mining Logistics", statLabel: "Nationwide" },
-      { name: "Explosive & Chemical Engineering", statLabel: "Projects" },
+      { name: "Commercial Explosives Production", statLabel: "Projects" },
     ],
   },
 
@@ -62,12 +62,10 @@ const en = {
     ecosystem: {
       nodes: [
         { abbr: "DAN", label: "Distribution" },
-        { abbr: "SSM", label: "Blasting" },
-        { abbr: "MCA", label: "Engineering" },
+        { abbr: "SSM", label: "Blasting & Drilling" },
         { abbr: "TNI", label: "Technical Solutions" },
-        { abbr: "GBN", label: "Logistics" },
-        { abbr: "FARDIS", label: "Workforce" },
-        { abbr: "AMN", label: "Production" },
+        { abbr: "GBN", label: "Mining Logistics" },
+        { abbr: "AMN", label: "Explosives Production" },
         { abbr: "PGBN", label: "Maritime" },
       ],
     },
@@ -140,17 +138,20 @@ const en = {
     readMore: "Read More",
     projects: [
       {
-        title: "Strategic Investment in LNG Terminal Expansion Project",
-        category: "Energy Infrastructure",
+        title: "Commercial Explosives Supply Exceeding 50,000 MT Per Year",
+        category: "Supply Operations",
       },
       {
-        title: "Safety & Compliance Certification for Mining Site Operations",
-        category: "Mining Compliance",
+        title: "Supply Expansion of Commercial Explosives in Nusa Tenggara Barat and Sulawesi",
+        category: "Business Expansion",
       },
       {
-        title:
-          "Groundbreaking Ceremony for Industrial Development in Kalimantan",
-        category: "Industrial Development",
+        title: "Consistent Production Achievement for Integrated Mining on Andesite Quarry in East Kalimantan",
+        category: "Mining Operations",
+      },
+      {
+        title: "Initial Steps for Commercial Explosives Production Facility Development Supporting National Production Independence",
+        category: "Strategic Investment",
       },
     ],
   },
@@ -172,6 +173,11 @@ const en = {
       "South Sumatra",
       "North Sulawesi",
       "Papua",
+      "West Nusa Tenggara",
+      "West Sumatra",
+      "Central Kalimantan",
+      "South Sulawesi",
+      "East Java",
     ],
   },
 
@@ -186,6 +192,11 @@ const en = {
       "East Kalimantan",
       "North Sulawesi",
       "Papua",
+      "West Nusa Tenggara",
+      "West Sumatra",
+      "Central Kalimantan",
+      "South Sulawesi",
+      "East Java",
     ],
     hqLabel: "HQ",
   },
@@ -288,25 +299,19 @@ const en = {
         year: "2019",
         title: "Strategic Acquisition",
         description:
-          "PT Nusantara Karya Raya Indonesia acquired ownership shares of PT Distribusi Ammo Nusantara as a licensed distributor of commercial explosives and provider of drilling and blasting services, particularly in coal mining and mineral sectors. In the same year, the group began expanding into telecommunications industry services.",
-      },
-      {
-        year: "2021",
-        title: "Telecom Integration",
-        description:
-          "PT Nusantara Karya Raya Indonesia continued its business expansion by acquiring partial shares of PT Fardis Jasa Indonesia to strengthen its commitment to cellular telecommunications service innovation.",
+          "PT Nusantara Karya Raya Indonesia acquired ownership shares of PT Distribusi Ammo Nusantara as a licensed distributor of commercial explosives and provider of drilling and blasting services, particularly in coal mining and mineral sectors. In the same period, PT Distribusi Ammo Nusantara successfully secured long-term contracts with several large-scale mining companies in the East Kalimantan area.",
       },
       {
         year: "2023",
-        title: "Workforce Solutions",
+        title: "Maritime Expansion",
         description:
-          "PT Nusantara Karya Raya Indonesia made a strategic move by collaborating with PT Fardis Cakrawala Indonesia as a human resources solutions provider specializing in the mining sector, adding a new dimension to the group's business portfolio.",
+          "In 2023, PT Nusantara Karya Raya Indonesia expanded its business by establishing a maritime logistics fleet through PT Pelayaran Garuda Bakti Nusantara.",
       },
       {
         year: "2024",
-        title: "Maritime & Technology",
+        title: "Technology & Innovation",
         description:
-          "To complete its planned business expansion, PT Nusantara Karya Raya Indonesia entered the maritime industry by establishing PT Pelayaran Garuda Bakti Nusantara, and PT Mitra Cuan Abadi under the commercial brand BlastPro, specializing in drilling heavy equipment distribution and LOX breaker technology innovation solutions.",
+          "To complement its planned business expansion vision, PT Nusantara Karya Raya Indonesia partnered with Selo Group to establish PT Mitra Cuan Abadi under the commercial brand BlastPro, specializing in drilling heavy equipment distribution and LOX breaker technology innovation solutions.",
       },
       {
         year: "2025",
@@ -332,11 +337,11 @@ const en = {
       { label: "PT DAN", href: "#subsidiaries" },
       { label: "PT SSM", href: "#subsidiaries" },
       { label: "PT GBN", href: "#subsidiaries" },
-      { label: "PT MCA", href: "#subsidiaries" },
+      { label: "PT AMN", href: "#subsidiaries" },
     ],
     contactTitle: "Contact",
     contactLinks: [
-      { label: "info@nuskara.co.id", href: "mailto:info@nuskara.co.id" },
+      { label: "admin_nuskara@nuskara.co.id", href: "mailto:admin_nuskara@nuskara.co.id" },
       { label: "Jakarta, Indonesia", href: "#contact" },
     ],
     copyright: "PT Nuskara Karya Raya Indonesia. All rights reserved.",
@@ -370,7 +375,7 @@ const id: typeof en = {
       { name: "Distribusi Bahan Peledak Berlisensi", statLabel: "Ton/Tahun" },
       { name: "Peledakan & Pengeboran Presisi", statLabel: "Proyek" },
       { name: "Logistik Pertambangan Terintegrasi", statLabel: "Nasional" },
-      { name: "Rekayasa Bahan Peledak & Kimia", statLabel: "Proyek" },
+      { name: "Produksi Bahan Peledak Komersial", statLabel: "Proyek" },
     ],
   },
 
@@ -407,12 +412,10 @@ const id: typeof en = {
     ecosystem: {
       nodes: [
         { abbr: "DAN", label: "Distribusi" },
-        { abbr: "SSM", label: "Peledakan" },
-        { abbr: "MCA", label: "Rekayasa" },
+        { abbr: "SSM", label: "Peledakan & Pengeboran" },
         { abbr: "TNI", label: "Solusi Teknis" },
-        { abbr: "GBN", label: "Logistik" },
-        { abbr: "FARDIS", label: "Tenaga Kerja" },
-        { abbr: "AMN", label: "Produksi" },
+        { abbr: "GBN", label: "Logistik Pertambangan" },
+        { abbr: "AMN", label: "Produksi Peledak" },
         { abbr: "PGBN", label: "Maritim" },
       ],
     },
@@ -485,16 +488,20 @@ const id: typeof en = {
     readMore: "Baca Selengkapnya",
     projects: [
       {
-        title: "Investasi Strategis dalam Proyek Ekspansi Terminal LNG",
-        category: "Infrastruktur Energi",
+        title: "Keberhasilan Melakukan Supply Bahan Peledak Komersial dengan Volume di Atas 50.000 MT Per Tahun",
+        category: "Operasi Supply",
       },
       {
-        title: "Sertifikasi Keselamatan & Kepatuhan untuk Operasi Tambang",
-        category: "Kepatuhan Tambang",
+        title: "Ekspansi Supply Bahan Peledak Komersial di Nusa Tenggara Barat dan Sulawesi",
+        category: "Ekspansi Bisnis",
       },
       {
-        title: "Peresmian Pembangunan Kawasan Industri di Kalimantan",
-        category: "Pembangunan Industri",
+        title: "Konsistensi Pencapaian Produksi untuk Kegiatan Pertambangan Terintegrasi pada Tambang Andesit di Kalimantan Timur",
+        category: "Operasi Tambang",
+      },
+      {
+        title: "Langkah Awal untuk Persiapan Pembangunan Fasilitas Produksi Bahan Peledak Komersial dan Mendukung Kemandirian Produksi Nasional",
+        category: "Investasi Strategis",
       },
     ],
   },
@@ -516,6 +523,11 @@ const id: typeof en = {
       "Sumatera Selatan",
       "Sulawesi Utara",
       "Papua",
+      "Nusa Tenggara Barat",
+      "Sumatera Barat",
+      "Kalimantan Tengah",
+      "Sulawesi Selatan",
+      "Jawa Timur",
     ],
   },
 
@@ -530,6 +542,11 @@ const id: typeof en = {
       "Kalimantan Timur",
       "Sulawesi Utara",
       "Papua",
+      "Nusa Tenggara Barat",
+      "Sumatera Barat",
+      "Kalimantan Tengah",
+      "Sulawesi Selatan",
+      "Jawa Timur",
     ],
     hqLabel: "KP",
   },
@@ -632,25 +649,19 @@ const id: typeof en = {
         year: "2019",
         title: "Akuisisi Strategis",
         description:
-          "PT Nusantara Karya Raya Indonesia membeli kepemilikan saham dari PT Distribusi Ammo Nusantara sebagai distributor bahan peledak komersial serta penyedia jasa pengeboran dan peledakan, khususnya di sektor pertambangan batu bara dan mineral. Pada tahun yang sama, grup mulai bergerak ke jasa di bidang industri telekomunikasi.",
-      },
-      {
-        year: "2021",
-        title: "Integrasi Telekomunikasi",
-        description:
-          "PT Nusantara Karya Raya Indonesia melanjutkan ekspansi bisnisnya dengan mengakuisisi sebagian saham dari PT Fardis Jasa Indonesia untuk memperkuat komitmen inovasi layanan telekomunikasi seluler.",
+          "PT Nusantara Karya Raya Indonesia membeli kepemilikan saham dari PT Distribusi Ammo Nusantara sebagai distributor bahan peledak komersial serta penyedia jasa pengeboran dan peledakan, khususnya di sektor pertambangan batu bara dan mineral. Di periode yang sama, PT Distribusi Ammo Nusantara berhasil memperoleh kontrak jangka panjang dengan beberapa perusahaan pertambangan berskala besar di area Kalimantan Timur.",
       },
       {
         year: "2023",
-        title: "Solusi Tenaga Kerja",
+        title: "Ekspansi Maritim",
         description:
-          "PT Nusantara Karya Raya Indonesia membuat langkah strategis yaitu kolaborasi dengan PT Fardis Cakrawala Indonesia sebagai penyedia solusi sumber daya manusia khususnya pada sektor pertambangan, untuk menambah dimensi baru dalam portofolio bisnis grup.",
+          "Di tahun 2023, PT Nusantara Karya Raya Indonesia memperluas ekspansi bisnisnya dengan menambah armada logistik air melalui PT Pelayaran Garuda Bakti Nusantara.",
       },
       {
         year: "2024",
-        title: "Maritim & Teknologi",
+        title: "Teknologi & Inovasi",
         description:
-          "Untuk melengkapi visi ekspansi bisnis secara terencana, PT Nusantara Karya Raya Indonesia merambah industri pelayaran dengan mendirikan PT Pelayaran Garuda Bakti Nusantara serta PT Mitra Cuan Abadi dengan brand komersial BlastPro yang bergerak di bidang distributor alat berat pengeboran dan solusi inovasi teknologi LOX breaker.",
+          "Untuk melengkapi visi ekspansi bisnis secara terencana, PT Nusantara Karya Raya Indonesia bermitra dengan Selo Group dengan mendirikan PT Mitra Cuan Abadi dengan brand komersial BlastPro yang bergerak di bidang distribusi alat berat pengeboran dan solusi inovasi teknologi LOX breaker.",
       },
       {
         year: "2025",
@@ -676,11 +687,11 @@ const id: typeof en = {
       { label: "PT DAN", href: "#subsidiaries" },
       { label: "PT SSM", href: "#subsidiaries" },
       { label: "PT GBN", href: "#subsidiaries" },
-      { label: "PT MCA", href: "#subsidiaries" },
+      { label: "PT AMN", href: "#subsidiaries" },
     ],
     contactTitle: "Kontak",
     contactLinks: [
-      { label: "info@nuskara.co.id", href: "mailto:info@nuskara.co.id" },
+      { label: "admin_nuskara@nuskara.co.id", href: "mailto:admin_nuskara@nuskara.co.id" },
       { label: "Jakarta, Indonesia", href: "#contact" },
     ],
     copyright: "PT Nuskara Karya Raya Indonesia. Seluruh hak dilindungi.",

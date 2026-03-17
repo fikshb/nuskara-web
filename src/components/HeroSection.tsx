@@ -7,7 +7,7 @@ const subsidiaryCodes = [
   { code: "DAN", stat: "80.000+", color: "from-primary-700 to-primary-900" },
   { code: "SSM", stat: "150+", color: "from-primary-800 to-neutral-900" },
   { code: "PT GBN", stat: null, color: "from-neutral-800 to-neutral-950" },
-  { code: "PT MCA", stat: "109+", color: "from-primary-900 to-neutral-950" },
+  { code: "PT AMN", stat: "109+", color: "from-primary-900 to-neutral-950" },
 ];
 
 const containerVariants = {

@@ -21,6 +21,11 @@ const locationData: LocationData[] = [
   { id: "ekl", x: 48.1, y: 36.2 },
   { id: "nsl", x: 58.5, y: 31.9 },
   { id: "pap", x: 89.5, y: 56.7 },
+  { id: "ntb", x: 49.6, y: 83.5 },
+  { id: "smb", x: 14.4, y: 45.7 },
+  { id: "klt2", x: 39.1, y: 47.0 },
+  { id: "sls", x: 54.7, y: 62.5 },
+  { id: "jwt", x: 41.8, y: 79.0 },
 ];
 
 // Set to true to enable click-to-get-coordinates mode
