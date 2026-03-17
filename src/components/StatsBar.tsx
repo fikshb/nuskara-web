@@ -7,7 +7,7 @@ import { useTranslation } from "@/i18n/LanguageContext";
 const statsData = [
   { numericPart: 10, suffix: "+", prefix: "" },
   { numericPart: 6, suffix: "+", prefix: "" },
-  { numericPart: 9, suffix: "", prefix: "" },
+  { numericPart: 13, suffix: "", prefix: "" },
 ];
 
 function CountUp({

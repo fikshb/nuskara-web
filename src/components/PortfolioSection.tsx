@@ -8,7 +8,7 @@ const projectImages = [
   "/images/portfolio-1.webp",
   "/images/portfolio-2.webp",
   "/images/portfolio-3.webp",
-  "/images/portfolio-1.webp",
+  "/images/portfolio-4.webp",
 ];
 
 const projectYears = ["2025", "2025", "2024", "2025"];
